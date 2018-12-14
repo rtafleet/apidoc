@@ -12,8 +12,6 @@ Here's an example of an RTA access token:
 
 `eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU0TXpReVFURTVNRU0zTWpKQ05ESXlOa06T0VVek9URXdOdyJ9.eyJodHRwczovL2FwaS5ydGFmbGVldC5jb20vYXBwX21ldGFkYXRhIjp7InRlbmFudElkIjoiUlRBMDEyNjciLCJpZCI6Ikx1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyIiwiaXNNYWNoaW5lMk1hY2hpbmUiOnRydWUsImRlc2t0b3BVc2VybmFtZSI6InN5c3RlbSJ9LCJpc3MiOiJodHRwczovL2Rldi1ydGEuYXV0aDAuY29tLyIsInN1YiI6Ix1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3N0Zy5hcGkucnRhaGl2ZS5jb20iLCJpYXQiOjE1NDQ3MTUwNDYsImV4cCI6MTU0NzMwNzA0NiwiYXpwIjoiTHVVTFRhT0JxMmFyMnNGUGJockxGZVE4SVBySVU0WjIiLCJzY29wZSI6InBhcnRzOnZpZXciLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.izNktviwQnmj4yl5mrXLvmdRNyRfJste6fryhmtmEtNacY3ehgEilrrjfpBAgqAhqV8efuB9nkO2x27Bn-P76RHaFYUd5bWHveNCcwRkyLrj51C9_EENpzsjhh1_PU1cDaG15Ruil0LunM_4zSJ_4XIaipHwdDtBx5LatSLqcf5yy2YsKD9pKDfSmIxkYkpiJz_xyUKFW96H45n2cXlgGFoz  2j8skLZITVKQwFp1yJ_CfxmlTkJZ9ZQIQpWUd2PVtzCVCNDq26FJbnJjKX45UhwSw3wb5v-S5sRkDzQl4WYDbRfAf3bCmPmpFrSstp2uvw3_CMvirENT2NE0KPIuGQ`
 
-To call RTA Graph, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here's a call that returns the profile information of the signed-in user (the access token has been truncated for readability):
-
 ```http
 HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLC ... CMvirENT2NE0KPIuGQ
@@ -21,6 +19,8 @@ Host: api.rtafleet.com
 POST /graphql HTTP/1.1
 { "query": "{ getMe { id } }"}
 ```
+
+To call RTA Graph, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here's a call that returns the profile information of the signed-in user (the access token has been truncated for readability)
 
 ## What are RTA Graph permissions?
 
@@ -74,13 +74,9 @@ The basic steps required to configure a service and get a token from the Azure A
 1. Get an access token.
 1. Use the access token to call RTA Graph.
 
-#### Get an access token
+### Get an access token
 
 In the OAuth 2.0 client credentials grant flow, you use the Application ID and Application Secret values that you saved when you registered your app to request an access token directly from the Azure AD v2.0 /token endpoint.
-
-##### Token request
-
-You send a POST request to the /token endpoint to acquire an access token:
 
 > Get access token
 
@@ -97,12 +93,12 @@ cache-control: no-cache
 }
 ```
 
+You send a POST request to the /token endpoint to acquire an access token.
+
 * `audience`: Must be `https://api.rtahive.com`
 * `client_id`: The Application ID that the RTA Support team assigned when you registered your app.
 * `client_secret`: The Application Secret that was generated for your app by the support team.
 * `grant_type`: Must be `client_credentials`
-
-##### Token response
 
 > A successful response looks like this:
 

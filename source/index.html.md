@@ -5,8 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - http
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!">Sign Up for a Developer Key</a>
 
 includes:
   - oauth

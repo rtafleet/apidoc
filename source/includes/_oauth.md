@@ -2,9 +2,10 @@
 
 To call RTA Graph, your app must acquire an access token from Auth0, RTA's cloud identity service. The access token contains information (or claims) about your app and the permissions it has for the resources and APIs available through RTA Graph. To get an access token, your app must be able to authenticate with Auth0 and be authorized by either a user or an administrator for access to the RTA Graph resources it needs.
 
-This topic provides an overview of access tokens, OAuth and how your app can get access tokens. If you are already familiar with integrating an app with OAuthD to get tokens, then you can skip ahead to Next Steps for information and samples specific to RTA Graph.
+This topic provides an overview of access tokens, OAuth and how your app can get access tokens.
 
-What is an access token and how do I use it?
+## What is an access token and how do I use it?
+
 Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that web RTA Graph APIs, use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they're requesting. When calling RTA Graph, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).
 
 Here's an example of an RTA access token:
@@ -52,7 +53,7 @@ Here's an example of one set of the /authorize and /token endpoints exposed by A
 
 ## Register your app with RTA Graph
 
-Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by sending a message to RTA support and providing the app name and required permissions. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
+Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [sending a message to RTA support and providing the app name and required permissions](mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!). Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
 
 ## Get access on behalf of a user
 

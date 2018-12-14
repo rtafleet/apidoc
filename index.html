@@ -287,14 +287,14 @@
 <p>Here&#39;s an example of an RTA access token:</p>
 
 <p><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU0TXpReVFURTVNRU0zTWpKQ05ESXlOa06T0VVek9URXdOdyJ9.eyJodHRwczovL2FwaS5ydGFmbGVldC5jb20vYXBwX21ldGFkYXRhIjp7InRlbmFudElkIjoiUlRBMDEyNjciLCJpZCI6Ikx1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyIiwiaXNNYWNoaW5lMk1hY2hpbmUiOnRydWUsImRlc2t0b3BVc2VybmFtZSI6InN5c3RlbSJ9LCJpc3MiOiJodHRwczovL2Rldi1ydGEuYXV0aDAuY29tLyIsInN1YiI6Ix1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3N0Zy5hcGkucnRhaGl2ZS5jb20iLCJpYXQiOjE1NDQ3MTUwNDYsImV4cCI6MTU0NzMwNzA0NiwiYXpwIjoiTHVVTFRhT0JxMmFyMnNGUGJockxGZVE4SVBySVU0WjIiLCJzY29wZSI6InBhcnRzOnZpZXciLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.izNktviwQnmj4yl5mrXLvmdRNyRfJste6fryhmtmEtNacY3ehgEilrrjfpBAgqAhqV8efuB9nkO2x27Bn-P76RHaFYUd5bWHveNCcwRkyLrj51C9_EENpzsjhh1_PU1cDaG15Ruil0LunM_4zSJ_4XIaipHwdDtBx5LatSLqcf5yy2YsKD9pKDfSmIxkYkpiJz_xyUKFW96H45n2cXlgGFoz  2j8skLZITVKQwFp1yJ_CfxmlTkJZ9ZQIQpWUd2PVtzCVCNDq26FJbnJjKX45UhwSw3wb5v-S5sRkDzQl4WYDbRfAf3bCmPmpFrSstp2uvw3_CMvirENT2NE0KPIuGQ</code></p>
-
-<p>To call RTA Graph, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here&#39;s a call that returns the profile information of the signed-in user (the access token has been truncated for readability):</p>
 <pre class="highlight http tab-http"><code><span class="err">HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLC ... CMvirENT2NE0KPIuGQ
 Host: api.rtafleet.com
 </span><span class="nf">POST</span> <span class="nn">/graphql</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{ "query": "{ getMe { id } }"}</span>
-</code></pre><h2 id='what-are-rta-graph-permissions'>What are RTA Graph permissions?</h2>
+</code></pre>
+<p>To call RTA Graph, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here&#39;s a call that returns the profile information of the signed-in user (the access token has been truncated for readability)</p>
+<h2 id='what-are-rta-graph-permissions'>What are RTA Graph permissions?</h2>
 <p>RTA Graph exposes a rich set of granular permissions over the resources it controls. These permissions are expressed as strings and grant apps access to RTA Graph resources like vehicles, parts, work orders, purchase orders, etc. For example:</p>
 
 <ul>
@@ -342,10 +342,8 @@ The /token endpoint where your app can get an access token once user consent has
 <li>Get an access token.</li>
 <li>Use the access token to call RTA Graph.</li>
 </ol>
-<h4 id='get-an-access-token'>Get an access token</h4>
+<h3 id='get-an-access-token'>Get an access token</h3>
 <p>In the OAuth 2.0 client credentials grant flow, you use the Application ID and Application Secret values that you saved when you registered your app to request an access token directly from the Azure AD v2.0 /token endpoint.</p>
-<h5 id='token-request'>Token request</h5>
-<p>You send a POST request to the /token endpoint to acquire an access token:</p>
 
 <blockquote>
 <p>Get access token</p>
@@ -361,13 +359,15 @@ The /token endpoint where your app can get an access token once user consent has
 <span class="s">  "client_secret": "jsAt0vbpF3pKPyGqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"</span>
 <span class="s">}</span>
 </code></pre>
+<p>You send a POST request to the /token endpoint to acquire an access token.</p>
+
 <ul>
 <li><code>audience</code>: Must be <code>https://api.rtahive.com</code></li>
 <li><code>client_id</code>: The Application ID that the RTA Support team assigned when you registered your app.</li>
 <li><code>client_secret</code>: The Application Secret that was generated for your app by the support team.</li>
 <li><code>grant_type</code>: Must be <code>client_credentials</code></li>
 </ul>
-<h5 id='token-response'>Token response</h5>
+
 <blockquote>
 <p>A successful response looks like this:</p>
 </blockquote>
@@ -399,14 +399,6 @@ The /token endpoint where your app can get an access token once user consent has
 
 <p><code>https://api.rtafleet.com/graphql</code></p>
 
-<p>The components of a request include:</p>
-
-<ul>
-<li>HTTP method - For RTA Graph, this will always be <code>POST</code></li>
-<li>Content type: <code>application/json</code></li>
-<li>Body: JSON-encoded body of the following form:</li>
-</ul>
-
 <blockquote>
 <p>Request body format</p>
 </blockquote>
@@ -416,15 +408,15 @@ The /token endpoint where your app can get an access token once user consent has
   </span><span class="s2">"variables"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"myVariable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"someValue"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>After you make a request, a response is returned that includes:</p>
+<p>The components of a request include:</p>
 
 <ul>
-<li>Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.</li>
-<li>Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.</li>
-<li>Next link - If your request returns a lot of data, you need to page through it by choosing Next. For details, see <a href="#paging">Paging</a>.</li>
+<li>HTTP method - For RTA Graph, this will always be <code>POST</code></li>
+<li>Content type: <code>application/json</code></li>
+<li>Body: JSON-encoded body of the following form:</li>
 </ul>
 
-<p>A query might result in some data and some errors, and those should be returned in a JSON object of the form:</p>
+<p>After you make a request, a response is returned that includes:</p>
 
 <blockquote>
 <p>Response data format</p>
@@ -434,6 +426,14 @@ The /token endpoint where your app can get an access token once user consent has
   </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<ul>
+<li>Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.</li>
+<li>data - The data that you requested or the result of the operation. The response message can be empty for some operations. If your request returns a lot of data, you need to page through it. For details, see <a href="#paging">Paging</a>.</li>
+<li>errors - Any errors that occur will be included.</li>
+</ul>
+
+<p>A query might result in some data and some errors, and those should be returned in a JSON object of the form:</p>
+
 <p>If there were no errors returned, the &quot;errors&quot; field should not be present on the response.</p>
 
 <blockquote>
@@ -482,7 +482,11 @@ The /token endpoint where your app can get an access token once user consent has
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='graphql-schema'>GraphQL Schema</h1><h1 id='paging'>Paging</h1>
+</span></code></pre><h1 id='graphql-schema'>GraphQL Schema</h1>
+<aside class="notice">
+Coming soon!
+</aside>
+<h1 id='paging'>Paging</h1>
 <p>Paging of records is handled as part of the request to any of the plural methods in the RTA Graph API using the <code>queryOptions.pagination</code> element in the GraphQL query.</p>
 
 <p>When a response is returned, a set of <code>meta</code> data is supplied which provides additional pagination information indicating the current <code>page</code>, <code>totalPages</code>, <code>totalRecords</code>, current <code>offset</code> and current <code>limit</code></p>
@@ -596,7 +600,7 @@ The /token endpoint where your app can get an access token once user consent has
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='permissions'>Permissions</h1>
 <p>Permissions in RTA Graph are enforced based either the User or Application identity accessing the API.</p>
-<h3 id='current-permissions-supported-by-the-rta-graph-api'>Current permissions supported by the RTA Graph API</h3>
+<h2 id='current-permissions-supported-by-the-rta-graph-api'>Current permissions supported by the RTA Graph API</h2>
 <ul>
 <li>dashboards:view</li>
 <li>parts:add</li>

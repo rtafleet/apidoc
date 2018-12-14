@@ -228,6 +228,9 @@
             <a href="#get-access-tokens-to-call-rta-graph" class="toc-h1 toc-link" data-title="Get access tokens to call RTA Graph">Get access tokens to call RTA Graph</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#what-is-an-access-token-and-how-do-i-use-it" class="toc-h2 toc-link" data-title="What is an access token and how do I use it?">What is an access token and how do I use it?</a>
+                  </li>
+                  <li>
                     <a href="#what-are-rta-graph-permissions" class="toc-h2 toc-link" data-title="What are RTA Graph permissions?">What are RTA Graph permissions?</a>
                   </li>
                   <li>
@@ -266,8 +269,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!">Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -278,10 +280,9 @@
 <h1 id='get-access-tokens-to-call-rta-graph'>Get access tokens to call RTA Graph</h1>
 <p>To call RTA Graph, your app must acquire an access token from Auth0, RTA&#39;s cloud identity service. The access token contains information (or claims) about your app and the permissions it has for the resources and APIs available through RTA Graph. To get an access token, your app must be able to authenticate with Auth0 and be authorized by either a user or an administrator for access to the RTA Graph resources it needs.</p>
 
-<p>This topic provides an overview of access tokens, OAuth and how your app can get access tokens. If you are already familiar with integrating an app with OAuthD to get tokens, then you can skip ahead to Next Steps for information and samples specific to RTA Graph.</p>
-
-<p>What is an access token and how do I use it?
-Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that web RTA Graph APIs, use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they&#39;re requesting. When calling RTA Graph, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).</p>
+<p>This topic provides an overview of access tokens, OAuth and how your app can get access tokens.</p>
+<h2 id='what-is-an-access-token-and-how-do-i-use-it'>What is an access token and how do I use it?</h2>
+<p>Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that web RTA Graph APIs, use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they&#39;re requesting. When calling RTA Graph, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).</p>
 
 <p>Here&#39;s an example of an RTA access token:</p>
 
@@ -325,7 +326,7 @@ The /token endpoint where your app can get an access token once user consent has
 <li><code>https://rtafleet.auth0.com/token</code></li>
 </ul>
 <h2 id='register-your-app-with-rta-graph'>Register your app with RTA Graph</h2>
-<p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by sending a message to RTA support and providing the app name and required permissions. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
+<p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&amp;body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!">sending a message to RTA support and providing the app name and required permissions</a>. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
 <h2 id='get-access-on-behalf-of-a-user'>Get access on behalf of a user</h2>
 <p>Coming soon.</p>
 <h2 id='get-access-without-a-user'>Get access without a user</h2>

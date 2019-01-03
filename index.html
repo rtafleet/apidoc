@@ -222,25 +222,22 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#overview-of-rta-graph" class="toc-h1 toc-link" data-title="Overview of RTA Graph">Overview of RTA Graph</a>
+            <a href="#overview-of-the-rta-api" class="toc-h1 toc-link" data-title="Overview of the RTA API">Overview of the RTA API</a>
           </li>
           <li>
-            <a href="#get-access-tokens-to-call-rta-graph" class="toc-h1 toc-link" data-title="Get access tokens to call RTA Graph">Get access tokens to call RTA Graph</a>
+            <a href="#get-access-tokens-to-call-the-rta-api" class="toc-h1 toc-link" data-title="Get access tokens to call the RTA API">Get access tokens to call the RTA API</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#what-is-an-access-token-and-how-do-i-use-it" class="toc-h2 toc-link" data-title="What is an access token and how do I use it?">What is an access token and how do I use it?</a>
                   </li>
                   <li>
-                    <a href="#what-are-rta-graph-permissions" class="toc-h2 toc-link" data-title="What are RTA Graph permissions?">What are RTA Graph permissions?</a>
+                    <a href="#what-are-the-rta-api-permissions" class="toc-h2 toc-link" data-title="What are the RTA API permissions?">What are the RTA API permissions?</a>
                   </li>
                   <li>
                     <a href="#where-does-my-app-get-an-access-token" class="toc-h2 toc-link" data-title="Where does my app get an access token?">Where does my app get an access token?</a>
                   </li>
                   <li>
-                    <a href="#register-your-app-with-rta-graph" class="toc-h2 toc-link" data-title="Register your app with RTA Graph">Register your app with RTA Graph</a>
-                  </li>
-                  <li>
-                    <a href="#get-access-on-behalf-of-a-user" class="toc-h2 toc-link" data-title="Get access on behalf of a user">Get access on behalf of a user</a>
+                    <a href="#register-your-app-with-the-rta-api" class="toc-h2 toc-link" data-title="Register your app with the RTA API">Register your app with the RTA API</a>
                   </li>
                   <li>
                     <a href="#get-access-without-a-user" class="toc-h2 toc-link" data-title="Get access without a user">Get access without a user</a>
@@ -251,12 +248,12 @@
             <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#current-permissions-supported-by-the-rta-graph-api" class="toc-h2 toc-link" data-title="Current permissions supported by the RTA Graph API">Current permissions supported by the RTA Graph API</a>
+                    <a href="#current-permissions-supported-by-the-rta-api" class="toc-h2 toc-link" data-title="Current permissions supported by the RTA API">Current permissions supported by the RTA API</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#use-the-rta-graph-api" class="toc-h1 toc-link" data-title="Use the RTA Graph API">Use the RTA Graph API</a>
+            <a href="#use-the-rta-api" class="toc-h1 toc-link" data-title="Use the RTA API">Use the RTA API</a>
           </li>
           <li>
             <a href="#exploring-the-graphql-schema" class="toc-h1 toc-link" data-title="Exploring the GraphQL Schema">Exploring the GraphQL Schema</a>
@@ -283,14 +280,14 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='overview-of-rta-graph'>Overview of RTA Graph</h1>
-<p>RTA Graph is the gateway to data and intelligence in RTA Fleet Management software. You can use the RTA Graph API to build apps for organization and consumers that interact with the data in RTA Fleet Management software. With RTA  Graph, you can connect to a wealth of resources, relationships, and intelligence, all through a single endpoint: <code>https://api.rtafleet.com</code>.</p>
-<h1 id='get-access-tokens-to-call-rta-graph'>Get access tokens to call RTA Graph</h1>
-<p>To call RTA Graph, your app must acquire an access token from Auth0, RTA&#39;s cloud identity service. The access token contains information (or claims) about your app and the permissions it has for the resources and APIs available through RTA Graph. To get an access token, your app must be able to authenticate with Auth0 and be authorized by either a user or an administrator for access to the RTA Graph resources it needs.</p>
+        <h1 id='overview-of-the-rta-api'>Overview of the RTA API</h1>
+<p>The RTA API is the gateway to data and intelligence in RTA Fleet Management software. You can use the RTA API to build apps for your organization and consumers that interact with the data in RTA Fleet Management software. With the RTA API, you can connect to a wealth of resources, relationships, and intelligence, all through a single endpoint: <code>https://api.rtafleet.com</code>.</p>
+<h1 id='get-access-tokens-to-call-the-rta-api'>Get access tokens to call the RTA API</h1>
+<p>To call the RTA API, your app must acquire an access token from Auth0, RTA&#39;s cloud identity service. The access token contains information (or claims) about your app and the permissions it has for the resources and APIs available through the RTA API. To get an access token, your app must be able to authenticate with Auth0 and be authorized by either a user or an administrator for access to the the RTA API resources it needs.</p>
 
 <p>This topic provides an overview of access tokens, OAuth and how your app can get access tokens.</p>
 <h2 id='what-is-an-access-token-and-how-do-i-use-it'>What is an access token and how do I use it?</h2>
-<p>Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that web RTA Graph APIs, use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they&#39;re requesting. When calling RTA Graph, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).</p>
+<p>Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that the RTA APIs use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they&#39;re requesting. When calling the RTA API, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).</p>
 
 <p>Here&#39;s an example of an RTA access token:</p>
 
@@ -301,23 +298,23 @@ Host: api.rtafleet.com
 </span><span class="nf">POST</span> <span class="nn">/graphql</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{ "query": "{ getMe { id } }"}</span>
 </code></pre>
-<p>To call RTA Graph, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here&#39;s a call that returns the profile information of the signed-in user (the access token has been truncated for readability)</p>
-<h2 id='what-are-rta-graph-permissions'>What are RTA Graph permissions?</h2>
-<p>RTA Graph exposes a rich set of granular permissions over the resources it controls. These permissions are expressed as strings and grant apps access to RTA Graph resources like vehicles, parts, work orders, purchase orders, etc. For example:</p>
+<p>To call the RTA API, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here&#39;s a call that returns the profile information of the signed-in user (the access token has been truncated for readability)</p>
+<h2 id='what-are-the-rta-api-permissions'>What are the RTA API permissions?</h2>
+<p>The RTA API exposes a rich set of granular permissions over the resources it controls. These permissions are expressed as strings and grant apps access to the RTA API resources like vehicles, parts, work orders, purchase orders, etc. For example:</p>
 
 <ul>
-<li><em>Vehicle.Read</em> allows an app to read the vehicles in the RTA system.</li>
-<li><em>Part.Update</em> allows an app to update part details.</li>
+<li><em>vehicles:view</em> allows an app to read the vehicles in the RTA system.</li>
+<li><em>parts:update</em> allows an app to update part details.</li>
 </ul>
 
 <p>There are two types of permissions:</p>
 
 <ul>
-<li>Delegated permissions are used by apps that run with a user present. The user&#39;s privileges are delegated to the app which makes calls on behalf of the user to RTA Graph. Many of these permissions can be consented to by a user, but others require administrator consent.</li>
+<li>Delegated permissions are used by apps that run with a user present. The user&#39;s privileges are delegated to the app which makes calls on behalf of the user to the RTA API. Many of these permissions can be consented to by a user, but others require administrator consent.</li>
 <li>Application permissions are used by apps that run without a user. These often grant an app broad privileges within an organization and always require the consent of an administrator.</li>
 </ul>
 
-<p>For a complete list of RTA Graph permissions, as well as the differences between delegated and application permissions, see the <a href="#permissions">Permissions</a> reference.</p>
+<p>For a complete list of the RTA API permissions, as well as the differences between delegated and application permissions, see the <a href="#permissions">Permissions</a> reference.</p>
 <h2 id='where-does-my-app-get-an-access-token'>Where does my app get an access token?</h2>
 <p>Your app gets access tokens from Auth0, RTA&#39;s cloud identity service. To get an access token, your app exchanges HTTP requests and responses with Auth0 using industry-standard protocols defined in the OAuth 2.0 specification. These protocols describe the Auth0 endpoints and exchanges with them -- or authentication flows -- that your app uses to securely authenticate with Auth0 and get access tokens.</p>
 
@@ -333,22 +330,20 @@ The /token endpoint where your app can get an access token once user consent has
 <li><code>https://rtafleet.auth0.com/authorize</code></li>
 <li><code>https://rtafleet.auth0.com/token</code></li>
 </ul>
-<h2 id='register-your-app-with-rta-graph'>Register your app with RTA Graph</h2>
+<h2 id='register-your-app-with-the-rta-api'>Register your app with the RTA API</h2>
 <p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&amp;body=Support%2C%20%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%0A%0AThe%20following%20permissions%20are%20required%3A%20%0A%0A*%20%5BPERMISSION%201%5D%20%0A*%20%5BPERMISSION%202%5D%20%0A%0ACalls%20to%20the%20API%20will%20use%20the%20following%20RTA%20Desktop%20Username%3A%20%5BDESIRED%20USERNAME%20HERE%5D%0A%0AThanks%21%20%0A">sending a message to RTA support and providing the app name and required permissions</a>. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
-<h2 id='get-access-on-behalf-of-a-user'>Get access on behalf of a user</h2>
-<p>Coming soon.</p>
 <h2 id='get-access-without-a-user'>Get access without a user</h2>
-<p>Some apps call RTA Graph with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be an data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call RTA Graph under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.</p>
+<p>Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be an data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.</p>
 
-<p>Apps that call RTA Graph with their own identity use the OAuth 2.0 client credentials grant flow to get access tokens from Auth0. In this topic, we will walk through the basic steps to configure a service and use the OAuth client credentials grant flow to get an access token.</p>
+<p>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant flow to get access tokens from Auth0. In this topic, we will walk through the basic steps to configure a service and use the OAuth client credentials grant flow to get an access token.</p>
 <h3 id='authentication-and-authorization-steps'>Authentication and authorization steps</h3>
-<p>The basic steps required to configure a service and get a token from the Azure AD v2.0 endpoint that your service can use to call RTA Graph under its own identity are:</p>
+<p>The basic steps required to configure a service and get a token from the Azure AD v2.0 endpoint that your service can use to call the RTA API under its own identity are:</p>
 
 <ol>
 <li>Register your app.</li>
-<li>Configure permissions for RTA Graph on your app.</li>
+<li>Configure permissions for the RTA API on your app.</li>
 <li>Get an access token.</li>
-<li>Use the access token to call RTA Graph.</li>
+<li>Use the access token to call the RTA API.</li>
 </ol>
 <h3 id='get-an-access-token'>Get an access token</h3>
 <p>In the OAuth 2.0 client credentials grant flow, you use the Application ID and Application Secret values that you saved when you registered your app to request an access token directly from the Azure AD v2.0 /token endpoint.</p>
@@ -393,22 +388,22 @@ You must replace the values for `client_id` and `client_secret` with your person
 <p>A successful response contains the following:</p>
 
 <ul>
-<li><code>access_token</code>: The requested access token. Your app can use this token in calls to RTA Graph.</li>
+<li><code>access_token</code>: The requested access token. Your app can use this token in calls to the RTA API.</li>
 <li><code>scope</code>: This value contains all the application permissions you have configured for your app.</li>
 <li><code>token_type</code>: Indicates the token type value. The only type that Azure AD supports is bearer.</li>
 <li><code>expires_in</code>: How long the access token is valid (in seconds).</li>
 </ul>
 <h3 id='supported-app-scenarios-and-resources'>Supported app scenarios and resources</h3>
-<p>Apps that call RTA Graph under their own identity fall into one of two categories:</p>
+<p>Apps that call the RTA API under their own identity fall into one of two categories:</p>
 
 <ul>
 <li>Background services (daemons) that run on a server without a signed-in user.</li>
-<li>Apps that have a signed-in user but also call RTA Graph with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.</li>
-<li>Apps that call RTA Graph with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.</li>
+<li>Apps that have a signed-in user but also call the RTA API with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.</li>
+<li>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.</li>
 </ul>
 <h1 id='permissions'>Permissions</h1>
-<p>Permissions in RTA Graph are enforced based either the User or Application identity accessing the API.</p>
-<h2 id='current-permissions-supported-by-the-rta-graph-api'>Current permissions supported by the RTA Graph API</h2>
+<p>Permissions in RTA are enforced based either the User or Application identity accessing the API.</p>
+<h2 id='current-permissions-supported-by-the-rta-api'>Current permissions supported by the RTA API</h2>
 <ul>
 <li>dashboards:view</li>
 <li>parts:add</li>
@@ -419,8 +414,8 @@ You must replace the values for `client_id` and `client_secret` with your person
 <li>vehicles:view</li>
 <li>vendorParts:edit</li>
 </ul>
-<h1 id='use-the-rta-graph-api'>Use the RTA Graph API</h1>
-<p>RTA Graph is a <a href="https://graphql.org/">GraphQL</a> web API that enables you to access RTA Graph service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA Graph API.</p>
+<h1 id='use-the-rta-api'>Use the RTA API</h1>
+<p>The RTA API is a <a href="https://graphql.org/">GraphQL</a> web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.</p>
 
 <p><code>https://api.rtafleet.com/graphql</code></p>
 
@@ -436,7 +431,7 @@ You must replace the values for `client_id` and `client_secret` with your person
 <p>The components of a request include:</p>
 
 <ul>
-<li>HTTP method - For RTA Graph, this will always be <code>POST</code></li>
+<li>HTTP method - For RTA API, this will always be <code>POST</code></li>
 <li>Content type: <code>application/json</code></li>
 <li>Body: JSON-encoded body of the following form:</li>
 </ul>
@@ -599,7 +594,7 @@ You must replace the values for `client_id` and `client_secret` with your person
   </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The RTA Graph API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.</p>
+<p>The RTA API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.</p>
 
 <blockquote>
 <p>Sample invalid request</p>
@@ -679,7 +674,7 @@ You must replace the values for `client_id` and `client_secret` with your person
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='paging'>Paging</h1>
-<p>Paging of records is handled as part of the request to any of the plural methods in the RTA Graph API using the <code>queryOptions.pagination</code> element in the GraphQL query.</p>
+<p>Paging of records is handled as part of the request to any of the plural methods in the RTA API using the <code>queryOptions.pagination</code> element in the GraphQL query.</p>
 
 <p>When a response is returned, a set of <code>meta</code> data is supplied which provides additional pagination information indicating the current <code>page</code>, <code>totalPages</code>, <code>totalRecords</code>, current <code>offset</code> and current <code>limit</code></p>
 

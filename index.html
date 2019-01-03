@@ -248,15 +248,6 @@
               </ul>
           </li>
           <li>
-            <a href="#use-the-rta-graph-api" class="toc-h1 toc-link" data-title="Use the RTA Graph API">Use the RTA Graph API</a>
-          </li>
-          <li>
-            <a href="#graphql-schema" class="toc-h1 toc-link" data-title="GraphQL Schema">GraphQL Schema</a>
-          </li>
-          <li>
-            <a href="#paging" class="toc-h1 toc-link" data-title="Paging">Paging</a>
-          </li>
-          <li>
             <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -265,11 +256,28 @@
               </ul>
           </li>
           <li>
+            <a href="#use-the-rta-graph-api" class="toc-h1 toc-link" data-title="Use the RTA Graph API">Use the RTA Graph API</a>
+          </li>
+          <li>
+            <a href="#exploring-the-graphql-schema" class="toc-h1 toc-link" data-title="Exploring the GraphQL Schema">Exploring the GraphQL Schema</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#obtain-an-authentication-token" class="toc-h2 toc-link" data-title="Obtain an Authentication token">Obtain an Authentication token</a>
+                  </li>
+                  <li>
+                    <a href="#graphql-playground" class="toc-h2 toc-link" data-title="GraphQL Playground">GraphQL Playground</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#paging" class="toc-h1 toc-link" data-title="Paging">Paging</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!">Sign Up for a Developer Key</a></li>
+            <li><a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%20%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%0A%0AThe%20following%20permissions%20are%20required%3A%20%0A%0A*%20%5BPERMISSION%201%5D%20%0A*%20%5BPERMISSION%202%5D%20%0A%0ACalls%20to%20the%20API%20will%20use%20the%20following%20RTA%20Desktop%20Username%3A%20%5BDESIRED%20USERNAME%20HERE%5D%0A%0AThanks%21%20%0A">Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -326,7 +334,7 @@ The /token endpoint where your app can get an access token once user consent has
 <li><code>https://rtafleet.auth0.com/token</code></li>
 </ul>
 <h2 id='register-your-app-with-rta-graph'>Register your app with RTA Graph</h2>
-<p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&amp;body=Support%2C%0A%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%20The%20following%20permissions%20are%20required%3A%0A%0A*%20%5BPERMISSION%201%5D%0A*%20%5BPERMISSION%202%5D%0A%0AThanks!">sending a message to RTA support and providing the app name and required permissions</a>. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
+<p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&amp;body=Support%2C%20%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%0A%0AThe%20following%20permissions%20are%20required%3A%20%0A%0A*%20%5BPERMISSION%201%5D%20%0A*%20%5BPERMISSION%202%5D%20%0A%0ACalls%20to%20the%20API%20will%20use%20the%20following%20RTA%20Desktop%20Username%3A%20%5BDESIRED%20USERNAME%20HERE%5D%0A%0AThanks%21%20%0A">sending a message to RTA support and providing the app name and required permissions</a>. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
 <h2 id='get-access-on-behalf-of-a-user'>Get access on behalf of a user</h2>
 <p>Coming soon.</p>
 <h2 id='get-access-without-a-user'>Get access without a user</h2>
@@ -345,6 +353,10 @@ The /token endpoint where your app can get an access token once user consent has
 <h3 id='get-an-access-token'>Get an access token</h3>
 <p>In the OAuth 2.0 client credentials grant flow, you use the Application ID and Application Secret values that you saved when you registered your app to request an access token directly from the Azure AD v2.0 /token endpoint.</p>
 
+<aside class="notice">
+You must replace the values for `client_id` and `client_secret` with your personal Application ID and Application Secret values.
+</aside>
+
 <blockquote>
 <p>Get access token</p>
 </blockquote>
@@ -355,8 +367,8 @@ The /token endpoint where your app can get an access token once user consent has
 <span class="s">{</span>
 <span class="s">  "audience": "https://api.rtahive.com",</span>
 <span class="s">  "grant_type": "client_credentials",</span>
-<span class="s">  "client_id": "LuULTaO2sFPbhrLFeQ8IPrIU4Z2",</span>
-<span class="s">  "client_secret": "jsAt0vbpF3pKPyGqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"</span>
+<span class="s">  "client_id": "LuULTaO2sFPbhrLFe...PrIU4Z2",</span>
+<span class="s">  "client_secret": "jsAt0vbpF3...Gqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"</span>
 <span class="s">}</span>
 </code></pre>
 <p>You send a POST request to the /token endpoint to acquire an access token.</p>
@@ -393,6 +405,19 @@ The /token endpoint where your app can get an access token once user consent has
 <li>Background services (daemons) that run on a server without a signed-in user.</li>
 <li>Apps that have a signed-in user but also call RTA Graph with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.</li>
 <li>Apps that call RTA Graph with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.</li>
+</ul>
+<h1 id='permissions'>Permissions</h1>
+<p>Permissions in RTA Graph are enforced based either the User or Application identity accessing the API.</p>
+<h2 id='current-permissions-supported-by-the-rta-graph-api'>Current permissions supported by the RTA Graph API</h2>
+<ul>
+<li>dashboards:view</li>
+<li>parts:add</li>
+<li>parts:delete</li>
+<li>parts:update</li>
+<li>parts:view</li>
+<li>users:manage</li>
+<li>vehicles:view</li>
+<li>vendorParts:edit</li>
 </ul>
 <h1 id='use-the-rta-graph-api'>Use the RTA Graph API</h1>
 <p>RTA Graph is a <a href="https://graphql.org/">GraphQL</a> web API that enables you to access RTA Graph service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA Graph API.</p>
@@ -482,11 +507,178 @@ The /token endpoint where your app can get an access token once user consent has
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='graphql-schema'>GraphQL Schema</h1>
-<aside class="notice">
-Coming soon!
-</aside>
-<h1 id='paging'>Paging</h1>
+</span></code></pre><h1 id='exploring-the-graphql-schema'>Exploring the GraphQL Schema</h1><h2 id='obtain-an-authentication-token'>Obtain an Authentication token</h2>
+<p>Prior to connecting to the GraphQL endpoint to browse the schema, you must first obtain an authentication token using your client id and client secret. Follow the instructions in <a href="#get-an-access-token">Get an access token</a> before proceeding.</p>
+<h2 id='graphql-playground'>GraphQL Playground</h2>
+<p>GraphQL Playground provides an interactive method for exploring the RTA API.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Authorization"</span><span class="p">:</span><span class="s2">"Bearer YOUR AUTH TOKEN HERE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ol>
+<li>Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases. </li>
+<li>Run the GraphQL Playground app.</li>
+<li>Select <strong>URL ENDPOINT</strong> and enter the Endpoint url for the RTA API: <code>https://api.rtafleet.com</code>.</li>
+<li>In the bottom left of the GraphQL Playground, click the <strong>HTTP HEADERS</strong> tab and enter the JSON at the right, using the authentication token received in the previous step.</li>
+</ol>
+
+<p>At this point you should now be authorized to browse the schema and view the docs from within GraphQL Playground.</p>
+<h3 id='exploring-the-docs'>Exploring the Docs</h3>
+<p>On the right side of GraphQL Playground, you will find a tab called <strong>DOCS</strong> which you an use to explore the queries and mutations available in the RTA API.</p>
+<h3 id='examples'>Examples</h3><h4 id='example-1-querying-basic-tenant-information'>Example 1: Querying basic tenant information</h4>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nx">getTenant</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s2">"RTACAN01"</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">id</span>
+    <span class="nx">name</span>
+    <span class="nx">entitlements</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This sample demonstrates how to retrieve basic tenant information. Notice how GraphQL allows the developer to specify the exact data required in the response.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"getTenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTACAN01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTA Canary 01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"entitlements"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<!-- 
+#### Example 2: Querying current user information, including the id, name, and RTA desktop username the account is impersonating
+
+> Request
+
+```javascript
+{
+  getMe {
+    id
+    email
+    firstName
+    lastName
+    tenants {
+      id
+      name
+      username
+    }
+  }
+}
+```
+
+> Response
+
+```json
+{
+  "data": {
+    "getMe": {
+      "id": "0wrXTJ5KmgquF7mZA4ZF112LB1PLzOsW",
+      "email": null,
+      "firstName": null,
+      "lastName": null,
+      "tenants": [
+        {
+          "id": "RTACAN01",
+          "name": "RTA Canary 01",
+          "username": "system"
+        }
+      ]
+    }
+  }
+}
+``` -->
+<h1 id='errors'>Errors</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The RTA Graph API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.</p>
+
+<blockquote>
+<p>Sample invalid request</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">query</span> <span class="p">{</span>
+  <span class="nx">getParts</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="p">{</span><span class="nl">tenantId</span><span class="p">:</span> <span class="s2">"INVALID_ID"</span><span class="p">,</span> <span class="nx">facilityId</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">})</span> <span class="p">{</span>
+    <span class="nx">parts</span> <span class="p">{</span>
+      <span class="nx">id</span>
+      <span class="nx">partNumber</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>If there were no errors returned, the &quot;errors&quot; field will not be present on the response.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>message</code></td>
+<td>The error message.</td>
+</tr>
+<tr>
+<td><code>extensions</code></td>
+<td>Additional information about the error.</td>
+</tr>
+<tr>
+<td><code>exception</code></td>
+<td>Exception/Error details.</td>
+</tr>
+<tr>
+<td><code>requiredPermission</code></td>
+<td>The permission required to execute the requested operation.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Sample error response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required </span><span class="se">\"</span><span class="s2">parts:view</span><span class="se">\"</span><span class="s2"> permission."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"getParts"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API.MISSING_PERMISSION_PARTS_VIEW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exception"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API.MISSING_PERMISSION_PARTS_VIEW"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISSING_REQUIRED_PERMISSION"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required </span><span class="se">\"</span><span class="s2">parts:view</span><span class="se">\"</span><span class="s2"> permission."</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"requiredPermission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parts:view"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"ctx"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"awsRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1772866-ffbe-11e8-bd7e-b91d02e81301"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"correlationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a15b14c4-ffbe-11e8-bc70-19caf995b12d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"getPartsGraphql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T16:38:05+00:00"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"fetchPartsApi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T16:38:05+00:00"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='paging'>Paging</h1>
 <p>Paging of records is handled as part of the request to any of the plural methods in the RTA Graph API using the <code>queryOptions.pagination</code> element in the GraphQL query.</p>
 
 <p>When a response is returned, a set of <code>meta</code> data is supplied which provides additional pagination information indicating the current <code>page</code>, <code>totalPages</code>, <code>totalRecords</code>, current <code>offset</code> and current <code>limit</code></p>
@@ -597,102 +789,6 @@ Coming soon!
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='permissions'>Permissions</h1>
-<p>Permissions in RTA Graph are enforced based either the User or Application identity accessing the API.</p>
-<h2 id='current-permissions-supported-by-the-rta-graph-api'>Current permissions supported by the RTA Graph API</h2>
-<ul>
-<li>dashboards:view</li>
-<li>parts:add</li>
-<li>parts:delete</li>
-<li>parts:update</li>
-<li>parts:view</li>
-<li>users:manage</li>
-<li>vendorParts:edit</li>
-</ul>
-<h1 id='errors'>Errors</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The RTA Graph API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.</p>
-
-<blockquote>
-<p>Sample invalid request</p>
-</blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">query</span> <span class="p">{</span>
-  <span class="nx">getParts</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="p">{</span><span class="nl">tenantId</span><span class="p">:</span> <span class="s2">"INVALID_ID"</span><span class="p">,</span> <span class="nx">facilityId</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">})</span> <span class="p">{</span>
-    <span class="nx">parts</span> <span class="p">{</span>
-      <span class="nx">id</span>
-      <span class="nx">partNumber</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-<p>If there were no errors returned, the &quot;errors&quot; field will not be present on the response.</p>
-
-<table><thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>message</code></td>
-<td>The error message.</td>
-</tr>
-<tr>
-<td><code>extensions</code></td>
-<td>Additional information about the error.</td>
-</tr>
-<tr>
-<td><code>exception</code></td>
-<td>Exception/Error details.</td>
-</tr>
-<tr>
-<td><code>requiredPermission</code></td>
-<td>The permission required to execute the requested operation.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Sample error response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required </span><span class="se">\"</span><span class="s2">parts:view</span><span class="se">\"</span><span class="s2"> permission."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"getParts"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API.MISSING_PERMISSION_PARTS_VIEW"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"exception"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API.MISSING_PERMISSION_PARTS_VIEW"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MISSING_REQUIRED_PERMISSION"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing required </span><span class="se">\"</span><span class="s2">parts:view</span><span class="se">\"</span><span class="s2"> permission."</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"requiredPermission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parts:view"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="s2">"ctx"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"awsRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1772866-ffbe-11e8-bd7e-b91d02e81301"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"correlationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a15b14c4-ffbe-11e8-bc70-19caf995b12d"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"getPartsGraphql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T16:38:05+00:00"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"fetchPartsApi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T16:38:05+00:00"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
       </div>

@@ -10,4 +10,5 @@ Permissions in RTA Graph are enforced based either the User or Application ident
 * parts:update
 * parts:view
 * users:manage
+* vehicles:view
 * vendorParts:edit

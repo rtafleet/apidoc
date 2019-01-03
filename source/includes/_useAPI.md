@@ -87,9 +87,3 @@ query fetchMe {
   }
 }
 ```
-
-# GraphQL Schema
-
-<aside class="notice">
-Coming soon!
-</aside>

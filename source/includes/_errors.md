@@ -7,7 +7,7 @@
 }
 ```
 
-The RTA Graph API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.
+The RTA API returns error information as part of the response. A query might result in some data and some errors, and those should be returned in a JSON object of the form shown at the right.
 
 > Sample invalid request
 

@@ -1,6 +1,6 @@
-# Use the RTA Graph API
+# Use the RTA API
 
-RTA Graph is a [GraphQL](https://graphql.org/) web API that enables you to access RTA Graph service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA Graph API.
+The RTA API is a [GraphQL](https://graphql.org/) web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.
 
 `https://api.rtafleet.com/graphql`
 
@@ -16,7 +16,7 @@ RTA Graph is a [GraphQL](https://graphql.org/) web API that enables you to acces
 
 The components of a request include:
 
-* HTTP method - For RTA Graph, this will always be `POST`
+* HTTP method - For RTA API, this will always be `POST`
 * Content type: `application/json`
 * Body: JSON-encoded body of the following form:
 

@@ -1,8 +1,8 @@
 # Permissions
 
-Permissions in RTA Graph are enforced based either the User or Application identity accessing the API.
+Permissions in RTA are enforced based either the User or Application identity accessing the API.
 
-## Current permissions supported by the RTA Graph API
+## Current permissions supported by the RTA API
 
 * dashboards:view
 * parts:add

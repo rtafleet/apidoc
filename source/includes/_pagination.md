@@ -1,6 +1,6 @@
 # Paging
 
-Paging of records is handled as part of the request to any of the plural methods in the RTA Graph API using the `queryOptions.pagination` element in the GraphQL query.
+Paging of records is handled as part of the request to any of the plural methods in the RTA API using the `queryOptions.pagination` element in the GraphQL query.
 
 When a response is returned, a set of `meta` data is supplied which provides additional pagination information indicating the current `page`, `totalPages`, `totalRecords`, current `offset` and current `limit`
 

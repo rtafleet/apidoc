@@ -53,7 +53,7 @@ Here's an example of one set of the /authorize and /token endpoints exposed by A
 
 ## Register your app with the RTA API
 
-Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [sending a message to RTA support and providing the app name and required permissions](mailto:support@rtafleet.com?subject=New%20API%20Key%20Request&body=Support%2C%20%0APlease%20generate%20a%20new%20RTA%20Graph%20API%20application%20named%20%5BYOUR%20NAME%20HERE%5D.%0A%0AThe%20following%20permissions%20are%20required%3A%20%0A%0A*%20%5BPERMISSION%201%5D%20%0A*%20%5BPERMISSION%202%5D%20%0A%0ACalls%20to%20the%20API%20will%20use%20the%20following%20RTA%20Desktop%20Username%3A%20%5BDESIRED%20USERNAME%20HERE%5D%0A%0AThanks%21%20%0A). Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
+Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [sending a message to RTA support and providing the app name and required permissions](https://www.rtafleet.com/new-api-key/). Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
 
 ## Get access without a user
 

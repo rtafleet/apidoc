@@ -57,7 +57,7 @@ Your app must be registered with RTA. Registering your app establishes a unique 
 
 ## Get access without a user
 
-Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be an data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.
+Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be a data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.
 
 Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant flow to get access tokens from Auth0. In this topic, we will walk through the basic steps to configure a service and use the OAuth client credentials grant flow to get an access token.
 

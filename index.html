@@ -333,7 +333,7 @@ The /token endpoint where your app can get an access token once user consent has
 <h2 id='register-your-app-with-the-rta-api'>Register your app with the RTA API</h2>
 <p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="https://www.rtafleet.com/new-api-key/">sending a message to RTA support and providing the app name and required permissions</a>. Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
 <h2 id='get-access-without-a-user'>Get access without a user</h2>
-<p>Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be an data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.</p>
+<p>Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be a data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.</p>
 
 <p>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant flow to get access tokens from Auth0. In this topic, we will walk through the basic steps to configure a service and use the OAuth client credentials grant flow to get an access token.</p>
 <h3 id='authentication-and-authorization-steps'>Authentication and authorization steps</h3>
@@ -402,7 +402,7 @@ You must replace the values for `client_id` and `client_secret` with your person
 <li>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.</li>
 </ul>
 <h1 id='permissions'>Permissions</h1>
-<p>Permissions in RTA are enforced based either the User or Application identity accessing the API.</p>
+<p>Permissions in RTA are enforced based on Application identity accessing the API.</p>
 <h2 id='current-permissions-supported-by-the-rta-api'>Current permissions supported by the RTA API</h2>
 <ul>
 <li>dashboards:view</li>

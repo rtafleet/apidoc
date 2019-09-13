@@ -259,10 +259,10 @@
             <a href="#exploring-the-graphql-schema" class="toc-h1 toc-link" data-title="Exploring the GraphQL Schema">Exploring the GraphQL Schema</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#obtain-an-authentication-token" class="toc-h2 toc-link" data-title="Obtain an Authentication token">Obtain an Authentication token</a>
+                    <a href="#exploring-the-docs" class="toc-h2 toc-link" data-title="Exploring the Docs">Exploring the Docs</a>
                   </li>
                   <li>
-                    <a href="#graphql-playground" class="toc-h2 toc-link" data-title="GraphQL Playground">GraphQL Playground</a>
+                    <a href="#examples" class="toc-h2 toc-link" data-title="Examples">Examples</a>
                   </li>
               </ul>
           </li>
@@ -505,22 +505,12 @@ You must replace the values for `client_id` and `client_secret` with your person
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='exploring-the-graphql-schema'>Exploring the GraphQL Schema</h1><h2 id='obtain-an-authentication-token'>Obtain an Authentication token</h2>
-<p>Prior to connecting to the GraphQL endpoint to browse the schema, you must first obtain an authentication token using your client id and client secret. Follow the instructions in <a href="#get-an-access-token">Get an access token</a> before proceeding.</p>
-<h2 id='graphql-playground'>GraphQL Playground</h2>
-<p>GraphQL Playground provides an interactive method for exploring the RTA API.</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Authorization"</span><span class="p">:</span><span class="s2">"Bearer YOUR AUTH TOKEN HERE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre><h1 id='exploring-the-graphql-schema'>Exploring the GraphQL Schema</h1>
 <ol>
-<li>Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases. </li>
+<li>Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases.</li>
 <li>Run the GraphQL Playground app.</li>
-<li>Select <strong>URL ENDPOINT</strong> and enter the Endpoint url for the RTA API: <code>https://api.rtafleet.com</code>.</li>
-<li>In the bottom left of the GraphQL Playground, click the <strong>HTTP HEADERS</strong> tab and enter the JSON at the right, using the authentication token received in the previous step.</li>
+<li>Select <strong>URL ENDPOINT</strong> and enter the Endpoint url for the RTA API: <code>https://api.rtafleet.com/graphql</code>.</li>
 </ol>
-
-<p>At this point you should now be authorized to browse the schema and view the docs from within GraphQL Playground.</p>
 <h3 id='exploring-the-docs'>Exploring the Docs</h3>
 <p>On the right side of GraphQL Playground, you will find a tab called <strong>DOCS</strong> which you an use to explore the queries and mutations available in the RTA API.</p>
 <h3 id='examples'>Examples</h3><h4 id='example-1-querying-basic-tenant-information'>Example 1: Querying basic tenant information</h4>
@@ -550,7 +540,7 @@ You must replace the values for `client_id` and `client_secret` with your person
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<!-- 
+<!--
 #### Example 2: Querying current user information, including the id, name, and RTA desktop username the account is impersonating
 
 > Request

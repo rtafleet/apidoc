@@ -1,26 +1,8 @@
 # Exploring the GraphQL Schema
 
-
-## Obtain an Authentication token
-
-Prior to connecting to the GraphQL endpoint to browse the schema, you must first obtain an authentication token using your client id and client secret. Follow the instructions in [Get an access token](#get-an-access-token) before proceeding.
-
-## GraphQL Playground
-
-GraphQL Playground provides an interactive method for exploring the RTA API.
-
-```json
-{
-  "Authorization":"Bearer YOUR AUTH TOKEN HERE"
-}
-```
-
-1. Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases. 
+1. Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases.
 2. Run the GraphQL Playground app.
-3. Select **URL ENDPOINT** and enter the Endpoint url for the RTA API: `https://api.rtafleet.com`.
-4. In the bottom left of the GraphQL Playground, click the **HTTP HEADERS** tab and enter the JSON at the right, using the authentication token received in the previous step.
-
-At this point you should now be authorized to browse the schema and view the docs from within GraphQL Playground.
+3. Select **URL ENDPOINT** and enter the Endpoint url for the RTA API: `https://api.rtafleet.com/graphql`.
 
 ### Exploring the Docs
 
@@ -58,7 +40,7 @@ This sample demonstrates how to retrieve basic tenant information. Notice how Gr
 }
 ```
 
-<!-- 
+<!--
 #### Example 2: Querying current user information, including the id, name, and RTA desktop username the account is impersonating
 
 > Request

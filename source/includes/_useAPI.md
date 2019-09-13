@@ -1,3 +1,7 @@
+# Code Samples
+
+Code samples that demonstrate using the RTA API are available in the [RTA Developer Samples GitHub repository](https://github.com/rtafleet/developer-samples).
+
 # Use the RTA API
 
 The RTA API is a [GraphQL](https://graphql.org/) web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.
@@ -16,9 +20,9 @@ The RTA API is a [GraphQL](https://graphql.org/) web API that enables you to acc
 
 The components of a request include:
 
-* HTTP method - For RTA API, this will always be `POST`
-* Content type: `application/json`
-* Body: JSON-encoded body of the following form:
+- HTTP method - For RTA API, this will always be `POST`
+- Content type: `application/json`
+- Body: JSON-encoded body of the following form:
 
 After you make a request, a response is returned that includes:
 
@@ -31,9 +35,9 @@ After you make a request, a response is returned that includes:
 }
 ```
 
-* Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.
-* data - The data that you requested or the result of the operation. The response message can be empty for some operations. If your request returns a lot of data, you need to page through it. For details, see [Paging](#paging).
-* errors - Any errors that occur will be included.
+- Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.
+- data - The data that you requested or the result of the operation. The response message can be empty for some operations. If your request returns a lot of data, you need to page through it. For details, see [Paging](#paging).
+- errors - Any errors that occur will be included.
 
 A query might result in some data and some errors, and those should be returned in a JSON object of the form:
 

@@ -86,7 +86,7 @@ Host: rta.auth0.com
 Content-Type: application/json
 cache-control: no-cache
 {
-  "audience": "https://api.rtahive.com",
+  "audience": "https://api.rtafleet.com",
   "grant_type": "client_credentials",
   "client_id": "LuULTaO2sFPbhrLFe...PrIU4Z2",
   "client_secret": "jsAt0vbpF3...Gqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"
@@ -95,7 +95,7 @@ cache-control: no-cache
 
 You send a POST request to the /token endpoint to acquire an access token.
 
-* `audience`: Must be `https://api.rtahive.com`
+* `audience`: Must be `https://api.rtafleet.com`
 * `client_id`: The Application ID that the RTA Support team assigned when you registered your app.
 * `client_secret`: The Application Secret that was generated for your app by the support team.
 * `grant_type`: Must be `client_credentials`

@@ -275,6 +275,29 @@
           <li>
             <a href="#paging" class="toc-h1 toc-link" data-title="Paging">Paging</a>
           </li>
+          <li>
+            <a href="#extracting-data-from-rta" class="toc-h1 toc-link" data-title="Extracting data from RTA">Extracting data from RTA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#required-permission" class="toc-h2 toc-link" data-title="Required Permission">Required Permission</a>
+                  </li>
+                  <li>
+                    <a href="#url-format-of-the-extract-api" class="toc-h2 toc-link" data-title="URL format of the extract API">URL format of the extract API</a>
+                  </li>
+                  <li>
+                    <a href="#examples-calling-the-api" class="toc-h2 toc-link" data-title="Examples calling the API">Examples calling the API</a>
+                  </li>
+                  <li>
+                    <a href="#retreive-the-first-1000-records" class="toc-h2 toc-link" data-title="Retreive the first 1000 records">Retreive the first 1000 records</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-any-rows-modified-since-the-etag-12345" class="toc-h2 toc-link" data-title="Retrieve any rows modified since the etag 12345">Retrieve any rows modified since the etag 12345</a>
+                  </li>
+                  <li>
+                    <a href="#errors-in-the-data-extract-api" class="toc-h2 toc-link" data-title="Errors in the data extract API">Errors in the data extract API</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href="https://www.rtafleet.com/new-api-key/">Sign Up for a Developer Key</a></li>
@@ -363,7 +386,7 @@ You must replace the values for `client_id` and `client_secret` with your person
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">cache-control</span><span class="p">:</span> <span class="s">no-cache</span>
 <span class="s">{</span>
-<span class="s">  "audience": "https://api.rtahive.com",</span>
+<span class="s">  "audience": "https://api.rtafleet.com",</span>
 <span class="s">  "grant_type": "client_credentials",</span>
 <span class="s">  "client_id": "LuULTaO2sFPbhrLFe...PrIU4Z2",</span>
 <span class="s">  "client_secret": "jsAt0vbpF3...Gqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"</span>
@@ -372,7 +395,7 @@ You must replace the values for `client_id` and `client_secret` with your person
 <p>You send a POST request to the /token endpoint to acquire an access token.</p>
 
 <ul>
-<li><code>audience</code>: Must be <code>https://api.rtahive.com</code></li>
+<li><code>audience</code>: Must be <code>https://api.rtafleet.com</code></li>
 <li><code>client_id</code>: The Application ID that the RTA Support team assigned when you registered your app.</li>
 <li><code>client_secret</code>: The Application Secret that was generated for your app by the support team.</li>
 <li><code>grant_type</code>: Must be <code>client_credentials</code></li>
@@ -409,16 +432,38 @@ You must replace the values for `client_id` and `client_secret` with your person
 <h2 id='current-permissions-supported-by-the-rta-api'>Current permissions supported by the RTA API</h2>
 <ul>
 <li>dashboards:view</li>
-<li>licensing:manage</li>
-<li>paperlessShop:timeClock</li>
-<li>parts:add</li>
-<li>parts:delete</li>
-<li>parts:update</li>
-<li>parts:view</li>
-<li>users:manage</li>
-<li>vehicles:view</li>
+<li>driverReports:add</li>
+<li>driverReports:view</li>
 <li>vendorParts:edit</li>
+<li>integrations:manage</li>
+<li>parts:view</li>
+<li>parts:update</li>
+<li>parts:delete</li>
+<li>parts:add</li>
+<li>users:manage</li>
+<li>mechanicVehicleInspections:manage</li>
+<li>mechanicVehicleInspections:view</li>
+<li>partRequisitions:view</li>
+<li>partRequisitions:update</li>
+<li>partRequisitions:delete</li>
+<li>partRequisitions:add</li>
+<li>employeeJobs:view</li>
+<li>vehicles:view</li>
+<li>vehicles:updateMeter</li>
+<li>shifts:view</li>
+<li>paperlessShop:timeClock</li>
+<li>reports:advanced</li>
+<li>reports:adHoc</li>
+<li>reports:standard</li>
+<li>workOrders:add</li>
+<li>workOrders:closeWorkOrderLines</li>
+<li>workOrders:deferWorkOrderLines</li>
+<li>workOrders:edit</li>
+<li>workOrders:reopenWorkOrderLines</li>
+<li>workOrders:restoreWorkOrderLines</li>
 <li>workOrders:view</li>
+<li>workOrders:voidWorkOrderLines</li>
+<li>api:extractTable</li>
 </ul>
 <h1 id='code-samples'>Code Samples</h1>
 <p>Code samples that demonstrate using the RTA API are available in the <a href="https://github.com/rtafleet/developer-samples">RTA Developer Samples GitHub repository</a>.</p>
@@ -783,7 +828,118 @@ You must replace the values for `client_id` and `client_secret` with your person
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='extracting-data-from-rta'>Extracting data from RTA</h1>
+<p>RTA has built a simple REST API for extracting useful data directly from the RTA database. This is useful for customers who need direct access to the raw, unformatted data for use in data warehousing and other utility projects.</p>
+
+<p>The data returned represents the actual physical column names in the database.</p>
+
+<p>The data extract API can be used by first obtaining an access token as descrbed in this documentation. The access token is then used as a bearer token in the <code>authorization</code> header.</p>
+<h3 id='required-permission'>Required Permission</h3>
+<p>A special API permission has been created to allow use of the data extract API. We recommend tighly controlling and securing the client id and client secret when granted this permission because anyone with these credentials will have full read access to all of the data in your database.</p>
+
+<table><thead>
+<tr>
+<th>Permission Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api:extractTable</td>
+<td>gives full read access to all tables in the customer database</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+<p><b>A note on etags</b></p>
+
+<p>The data extract API makes extensive use of etags. An etag is simply a text value in a table row that automatically increments whenever any column in the row is updated. The etag is similar to a date/time stamp, without the complexity of dates and times. Using the etag allows you to request only the latest changes since the last time you retrieved the data from the server so that you can periodically request small sets of data from the RTA API.</p>
+</aside>
+<h2 id='url-format-of-the-extract-api'>URL format of the extract API</h2>
+<p>Use the following URL to access the data extract API.</p>
+
+<p>URL: <code>https://api.rtafleet.com/v0/extract/&lt;tablename&gt;?etag=&lt;etag&gt;&amp;limit=&lt;limit&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>tablename</code></td>
+<td>The name of the actual table in the RTA database. To obtain the table names you may request the data dictionary by contacting support@rtafleet.com</td>
+</tr>
+<tr>
+<td><code>etag</code></td>
+<td>The first etag value to return</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>limit is not required, has a max of 1000 and defaults to 1000.  If you choose to get your data in increments of 100, you could set limit=100.</td>
+</tr>
+</tbody></table>
+<h2 id='examples-calling-the-api'>Examples calling the API</h2>
+<p>See the example at the right for the format of the data returned from the API.</p>
+
+<blockquote>
+<p>The resulting object is:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"count"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">"value"</span> <span class="p">:</span> <span class="p">[</span><span class="nx">the</span> <span class="nx">rows</span> <span class="nx">from</span> <span class="nx">the</span> <span class="nx">table</span> <span class="nx">sorted</span> <span class="nx">by</span> <span class="nx">etag</span><span class="p">],</span>
+     <span class="s2">"nextEtag"</span> <span class="p">:</span> <span class="s2">"12344"</span>
+<span class="p">}</span>
+</code></pre>
+<p>where <code>nextEtag</code> would be the very next etag value to use.  nextEtag is not returned if you have received all the rows in the table.</p>
+<h2 id='retreive-the-first-1000-records'>Retreive the first 1000 records</h2>
+<blockquote>
+<p>Example retrieving records from <code>vehfile</code></p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">curl --request GET \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=0&amp;limit=1000" \
+  --header "authorization: Bearer $AUTH_TOKEN"
 </span></code></pre>
+<blockquote>
+<p>Sample reponse from <code>vehfile</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"count"</span><span class="p">:</span><span class="s2">"1000"</span><span class="p">,</span>
+    <span class="s2">"value"</span><span class="p">:[</span>
+        <span class="p">{</span><span class="nx">FIRST</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">},</span>
+        <span class="p">...,</span>
+        <span class="p">{</span><span class="mi">1000</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"nextEtag"</span><span class="p">:</span><span class="s2">"12345"</span>
+<span class="p">}</span>
+</code></pre>
+<p>See the example CURL request at the right to retrieve the first 1000 records from the vehilces table <code>vehfile</code>.</p>
+<h2 id='retrieve-any-rows-modified-since-the-etag-12345'>Retrieve any rows modified since the etag 12345</h2>
+<blockquote>
+<p>Sample request with etag</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">curl --request GET \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=12345&amp;limit=1000" \
+  --header "authorization: Bearer $AUTH_TOKEN"
+</span></code></pre>
+<blockquote>
+<p>Sample response without nextEtag</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"count"</span><span class="p">:</span><span class="s2">"50"</span><span class="p">,</span>
+    <span class="s2">"value"</span><span class="p">:[</span>
+        <span class="p">{</span><span class="mi">1001</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">},</span>
+        <span class="p">...,</span>
+        <span class="p">{</span><span class="mi">1051</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p>See the example CURL request at the right to retrieve anything that has been created or modified since the etag of 12345 has been retrieved.</p>
+
+<p>Because nextEtag was not returned, there are no more rows to retrieve.</p>
+<h2 id='errors-in-the-data-extract-api'>Errors in the data extract API</h2>
+<p>If you supply an invalid tablename, you will receive a 404 error.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">

@@ -10,7 +10,7 @@ Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They co
 
 Here's an example of an RTA access token:
 
-`eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU0TXpReVFURTVNRU0zTWpKQ05ESXlOa06T0VVek9URXdOdyJ9.eyJodHRwczovL2FwaS5ydGFmbGVldC5jb20vYXBwX21ldGFkYXRhIjp7InRlbmFudElkIjoiUlRBMDEyNjciLCJpZCI6Ikx1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyIiwiaXNNYWNoaW5lMk1hY2hpbmUiOnRydWUsImRlc2t0b3BVc2VybmFtZSI6InN5c3RlbSJ9LCJpc3MiOiJodHRwczovL2Rldi1ydGEuYXV0aDAuY29tLyIsInN1YiI6Ix1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3N0Zy5hcGkucnRhaGl2ZS5jb20iLCJpYXQiOjE1NDQ3MTUwNDYsImV4cCI6MTU0NzMwNzA0NiwiYXpwIjoiTHVVTFRhT0JxMmFyMnNGUGJockxGZVE4SVBySVU0WjIiLCJzY29wZSI6InBhcnRzOnZpZXciLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.izNktviwQnmj4yl5mrXLvmdRNyRfJste6fryhmtmEtNacY3ehgEilrrjfpBAgqAhqV8efuB9nkO2x27Bn-P76RHaFYUd5bWHveNCcwRkyLrj51C9_EENpzsjhh1_PU1cDaG15Ruil0LunM_4zSJ_4XIaipHwdDtBx5LatSLqcf5yy2YsKD9pKDfSmIxkYkpiJz_xyUKFW96H45n2cXlgGFoz  2j8skLZITVKQwFp1yJ_CfxmlTkJZ9ZQIQpWUd2PVtzCVCNDq26FJbnJjKX45UhwSw3wb5v-S5sRkDzQl4WYDbRfAf3bCmPmpFrSstp2uvw3_CMvirENT2NE0KPIuGQ`
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU0TXpReVFURTVNRU0zTWpKQ05ESXlOa06T0VVek9URXdOdyJ9.eyJodHRwczovL2FwaS5ydGFmbGVldC5jb20vYXBwX21ldGFkYXRhIjp7InRlbmFudElkIjoiUlRBMDEyNjciLCJpZCI6Ikx1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyIiwiaXNNYWNoaW5lMk1hY2hpbmUiOnRydWUsImRlc2t0b3BVc2VybmFtZSI6InN5c3RlbSJ9LCJpc3MiOiJodHRwczovL2Rldi1ydGEuYXV0aDAuY29tLyIsInN1YiI6Ix1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3N0Zy5hcGkucnRhaGl2ZS5jb20iLCJpYXQiOjE1NDQ3MTUwNDYsImV4cCI6MTU0NzMwNzA0NiwiYXpwIjoiTHVVTFRhT0JxMmFyMnNGUGJockxGZVE4SVBySVU0WjIiLCJzY29wZSI6InBhcnRzOnZpZXciLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.izNktviwQnmj4yl5mrXLvmdRNyRfJste6fryhmtmEtNacY3ehgEilrrjfpBAgqAhqV8efuB9nkO2x27Bn-P76RHaFYUd5bWHveNCcwRkyLrj51C9_EENpzsjhh1_PU1cDaG15Ruil0LunM_4zSJ_4XIaipHwdDtBx5LatSLqcf5yy2YsKD9pKDfSmIxkYkpiJz_xyUKFW96H45n2cXlgGFoz 2j8skLZITVKQwFp1yJ_CfxmlTkJZ9ZQIQpWUd2PVtzCVCNDq26FJbnJjKX45UhwSw3wb5v-S5sRkDzQl4WYDbRfAf3bCmPmpFrSstp2uvw3_CMvirENT2NE0KPIuGQ`
 
 ```http
 HTTP/1.1
@@ -26,13 +26,13 @@ To call the RTA API, you attach the access token as a Bearer token to the Author
 
 The RTA API exposes a rich set of granular permissions over the resources it controls. These permissions are expressed as strings and grant apps access to the RTA API resources like vehicles, parts, work orders, purchase orders, etc. For example:
 
-* _vehicles:view_ allows an app to read the vehicles in the RTA system.
-* _parts:update_ allows an app to update part details.
+- _vehicles:view_ allows an app to read the vehicles in the RTA system.
+- _parts:update_ allows an app to update part details.
 
 There are two types of permissions:
 
-* Delegated permissions are used by apps that run with a user present. The user's privileges are delegated to the app which makes calls on behalf of the user to the RTA API. Many of these permissions can be consented to by a user, but others require administrator consent.
-* Application permissions are used by apps that run without a user. These often grant an app broad privileges within an organization and always require the consent of an administrator.
+- Delegated permissions are used by apps that run with a user present. The user's privileges are delegated to the app which makes calls on behalf of the user to the RTA API. Many of these permissions can be consented to by a user, but others require administrator consent.
+- Application permissions are used by apps that run without a user. These often grant an app broad privileges within an organization and always require the consent of an administrator.
 
 For a complete list of the RTA API permissions, as well as the differences between delegated and application permissions, see the [Permissions](#permissions) reference.
 
@@ -48,12 +48,12 @@ The /token endpoint where your app can get an access token once user consent has
 
 Here's an example of one set of the /authorize and /token endpoints exposed by Auth0:
 
-* `https://rtafleet.auth0.com/authorize`
-* `https://rtafleet.auth0.com/token`
+- `https://rtafleet.auth0.com/authorize`
+- `https://rtafleet.auth0.com/token`
 
 ## Register your app with the RTA API
 
-Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [sending a message to RTA support and providing the app name and required permissions](https://www.rtafleet.com/new-api-key/). Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
+Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [creating an API Key on the RTA Web App](https://app.rtafleet.com/admin/tenants/integrations/api-keys). More info can also be found [here](https://docs.rtafleet.com/rta-manual/rta-api-keys/) Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.
 
 ## Get access without a user
 
@@ -95,33 +95,33 @@ cache-control: no-cache
 
 You send a POST request to the /token endpoint to acquire an access token.
 
-* `audience`: Must be `https://api.rtafleet.com`
-* `client_id`: The Application ID that the RTA Support team assigned when you registered your app.
-* `client_secret`: The Application Secret that was generated for your app by the support team.
-* `grant_type`: Must be `client_credentials`
+- `audience`: Must be `https://api.rtafleet.com`
+- `client_id`: The Application ID that the RTA Support team assigned when you registered your app.
+- `client_secret`: The Application Secret that was generated for your app by the support team.
+- `grant_type`: Must be `client_credentials`
 
 > A successful response looks like this:
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU...",
-    "scope": "parts:view",
-    "expires_in": 2592000,
-    "token_type": "Bearer"
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU...",
+  "scope": "parts:view",
+  "expires_in": 2592000,
+  "token_type": "Bearer"
 }
 ```
 
 A successful response contains the following:
 
-* `access_token`: The requested access token. Your app can use this token in calls to the RTA API.
-* `scope`: This value contains all the application permissions you have configured for your app.
-* `token_type`: Indicates the token type value. The only type that Azure AD supports is bearer.
-* `expires_in`: How long the access token is valid (in seconds).
+- `access_token`: The requested access token. Your app can use this token in calls to the RTA API.
+- `scope`: This value contains all the application permissions you have configured for your app.
+- `token_type`: Indicates the token type value. The only type that Azure AD supports is bearer.
+- `expires_in`: How long the access token is valid (in seconds).
 
 ### Supported app scenarios and resources
 
 Apps that call the RTA API under their own identity fall into one of two categories:
 
-* Background services (daemons) that run on a server without a signed-in user.
-* Apps that have a signed-in user but also call the RTA API with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.
-* Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.
+- Background services (daemons) that run on a server without a signed-in user.
+- Apps that have a signed-in user but also call the RTA API with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.
+- Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.

@@ -283,12 +283,9 @@
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e9bde216.js"></script>
 
-    <script>
-      $(function() { setupCodeCopy(); });
-    </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;http&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -298,10 +295,7 @@
     <div class="toc-wrapper">
       <img src="images/logo-c31e1bdb.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="http">http</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -309,216 +303,372 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#overview-of-the-rta-api" class="toc-h1 toc-link" data-title="Overview of the RTA API">Overview of the RTA API</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#get-access-tokens-to-call-the-rta-api" class="toc-h1 toc-link" data-title="Get access tokens to call the RTA API">Get access tokens to call the RTA API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#what-is-an-access-token-and-how-do-i-use-it" class="toc-h2 toc-link" data-title="What is an access token and how do I use it?">What is an access token and how do I use it?</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#what-are-the-rta-api-permissions" class="toc-h2 toc-link" data-title="What are the RTA API permissions?">What are the RTA API permissions?</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#where-does-my-app-get-an-access-token" class="toc-h2 toc-link" data-title="Where does my app get an access token?">Where does my app get an access token?</a>
+                  </li>
+                  <li>
+                    <a href="#register-your-app-with-the-rta-api" class="toc-h2 toc-link" data-title="Register your app with the RTA API">Register your app with the RTA API</a>
+                  </li>
+                  <li>
+                    <a href="#get-access-without-a-user" class="toc-h2 toc-link" data-title="Get access without a user">Get access without a user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
+          </li>
+          <li>
+            <a href="#code-samples" class="toc-h1 toc-link" data-title="Code Samples">Code Samples</a>
+          </li>
+          <li>
+            <a href="#use-the-rta-api" class="toc-h1 toc-link" data-title="Use the RTA API">Use the RTA API</a>
+          </li>
+          <li>
+            <a href="#exploring-the-graphql-schema" class="toc-h1 toc-link" data-title="Exploring the GraphQL Schema">Exploring the GraphQL Schema</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#exploring-the-docs" class="toc-h2 toc-link" data-title="Exploring the Docs">Exploring the Docs</a>
+                  </li>
+                  <li>
+                    <a href="#examples" class="toc-h2 toc-link" data-title="Examples">Examples</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
+          <li>
+            <a href="#paging" class="toc-h1 toc-link" data-title="Paging">Paging</a>
+          </li>
+          <li>
+            <a href="#extracting-data-from-rta" class="toc-h1 toc-link" data-title="Extracting data from RTA">Extracting data from RTA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#required-permission" class="toc-h2 toc-link" data-title="Required Permission">Required Permission</a>
+                  </li>
+                  <li>
+                    <a href="#url-format-of-the-extract-api" class="toc-h2 toc-link" data-title="URL format of the extract API">URL format of the extract API</a>
+                  </li>
+                  <li>
+                    <a href="#examples-calling-the-api" class="toc-h2 toc-link" data-title="Examples calling the API">Examples calling the API</a>
+                  </li>
+                  <li>
+                    <a href="#retreive-the-first-1000-records" class="toc-h2 toc-link" data-title="Retreive the first 1000 records">Retreive the first 1000 records</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-any-rows-modified-since-the-etag-12345" class="toc-h2 toc-link" data-title="Retrieve any rows modified since the etag 12345">Retrieve any rows modified since the etag 12345</a>
+                  </li>
+                  <li>
+                    <a href="#errors-in-the-data-extract-api" class="toc-h2 toc-link" data-title="Errors in the data extract API">Errors in the data extract API</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='overview-of-the-rta-api'>Overview of the RTA API</h1>
+<p>The RTA API is the gateway to data and intelligence in RTA Fleet Management software. You can use the RTA API to build apps for your organization and consumers that interact with the data in RTA Fleet Management software. With the RTA API, you can connect to a wealth of resources, relationships, and intelligence, all through a single endpoint: <code>https://api.rtafleet.com</code>.</p>
+<h1 id='get-access-tokens-to-call-the-rta-api'>Get access tokens to call the RTA API</h1>
+<p>To call the RTA API, your app must acquire an access token from Auth0, RTA&#39;s cloud identity service. The access token contains information (or claims) about your app and the permissions it has for the resources and APIs available through the RTA API. To get an access token, your app must be able to authenticate with Auth0 and be authorized by either a user or an administrator for access to the the RTA API resources it needs.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>This topic provides an overview of access tokens, OAuth and how your app can get access tokens.</p>
+<h2 id='what-is-an-access-token-and-how-do-i-use-it'>What is an access token and how do I use it?</h2>
+<p>Access tokens issued by OAuth are base 64 encoded JSON Web Tokens (JWT). They contain information (claims) that the RTA APIs use to validate the caller and to ensure that the caller has the proper permissions to perform the operation they&#39;re requesting. When calling the RTA API, you can treat access tokens as opaque. You should always transmit access tokens over a secure channel, such as transport layer security (HTTPS).</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Here&#39;s an example of an RTA access token:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<p><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU0TXpReVFURTVNRU0zTWpKQ05ESXlOa06T0VVek9URXdOdyJ9.eyJodHRwczovL2FwaS5ydGFmbGVldC5jb20vYXBwX21ldGFkYXRhIjp7InRlbmFudElkIjoiUlRBMDEyNjciLCJpZCI6Ikx1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyIiwiaXNNYWNoaW5lMk1hY2hpbmUiOnRydWUsImRlc2t0b3BVc2VybmFtZSI6InN5c3RlbSJ9LCJpc3MiOiJodHRwczovL2Rldi1ydGEuYXV0aDAuY29tLyIsInN1YiI6Ix1VUxUYU9CcTJhcjJzRlBiaHJMRmVROElQcklVNFoyQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3N0Zy5hcGkucnRhaGl2ZS5jb20iLCJpYXQiOjE1NDQ3MTUwNDYsImV4cCI6MTU0NzMwNzA0NiwiYXpwIjoiTHVVTFRhT0JxMmFyMnNGUGJockxGZVE4SVBySVU0WjIiLCJzY29wZSI6InBhcnRzOnZpZXciLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.izNktviwQnmj4yl5mrXLvmdRNyRfJste6fryhmtmEtNacY3ehgEilrrjfpBAgqAhqV8efuB9nkO2x27Bn-P76RHaFYUd5bWHveNCcwRkyLrj51C9_EENpzsjhh1_PU1cDaG15Ruil0LunM_4zSJ_4XIaipHwdDtBx5LatSLqcf5yy2YsKD9pKDfSmIxkYkpiJz_xyUKFW96H45n2cXlgGFoz 2j8skLZITVKQwFp1yJ_CfxmlTkJZ9ZQIQpWUd2PVtzCVCNDq26FJbnJjKX45UhwSw3wb5v-S5sRkDzQl4WYDbRfAf3bCmPmpFrSstp2uvw3_CMvirENT2NE0KPIuGQ</code></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">HTTP/1.1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLC ... CMvirENT2NE0KPIuGQ
+Host: api.rtafleet.com
+</span><span class="nf">POST</span> <span class="nn">/graphql</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{ "query": "{ getMe { id } }"}</span>
 </code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p>To call the RTA API, you attach the access token as a Bearer token to the Authorization header in an HTTP request. For example, here&#39;s a call that returns the profile information of the signed-in user (the access token has been truncated for readability)</p>
+<h2 id='what-are-the-rta-api-permissions'>What are the RTA API permissions?</h2>
+<p>The RTA API exposes a rich set of granular permissions over the resources it controls. These permissions are expressed as strings and grant apps access to the RTA API resources like vehicles, parts, work orders, purchase orders, etc. For example:</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<ul>
+<li><em>vehicles:view</em> allows an app to read the vehicles in the RTA system.</li>
+<li><em>parts:update</em> allows an app to update part details.</li>
+</ul>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>There are two types of permissions:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<ul>
+<li>Delegated permissions are used by apps that run with a user present. The user&#39;s privileges are delegated to the app which makes calls on behalf of the user to the RTA API. Many of these permissions can be consented to by a user, but others require administrator consent.</li>
+<li>Application permissions are used by apps that run without a user. These often grant an app broad privileges within an organization and always require the consent of an administrator.</li>
+</ul>
+
+<p>For a complete list of the RTA API permissions, as well as the differences between delegated and application permissions, see the <a href="#permissions">Permissions</a> reference.</p>
+<h2 id='where-does-my-app-get-an-access-token'>Where does my app get an access token?</h2>
+<p>Your app gets access tokens from Auth0, RTA&#39;s cloud identity service. To get an access token, your app exchanges HTTP requests and responses with Auth0 using industry-standard protocols defined in the OAuth 2.0 specification. These protocols describe the Auth0 endpoints and exchanges with them -- or authentication flows -- that your app uses to securely authenticate with Auth0 and get access tokens.</p>
+
+<p>On a very simple level, to get an access token, your app exchanges HTTP requests with the following endpoints:</p>
+
+<p>The /authorize endpoint, where your app can send a user to authenticate with Auth0 and consent to the permissions your app needs.
+The /token endpoint where your app can get an access token once user consent has been granted.
+(Note: These definitions are not rigid. Depending on the protocol your app uses, it may get access tokens directly from the /authorize endpoint or it may authenticate directly with the /token endpoint.)</p>
+
+<p>Here&#39;s an example of one set of the /authorize and /token endpoints exposed by Auth0:</p>
+
+<ul>
+<li><code>https://rtafleet.auth0.com/authorize</code></li>
+<li><code>https://rtafleet.auth0.com/token</code></li>
+</ul>
+<h2 id='register-your-app-with-the-rta-api'>Register your app with the RTA API</h2>
+<p>Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by <a href="https://app.rtafleet.com/admin/tenants/integrations/api-keys">creating an API Key on the RTA Web App</a>. More info can also be found <a href="https://docs.rtafleet.com/rta-manual/rta-api-keys/">here</a> Depending on the type of app you are developing, you will need to copy one or more properties during registration to use when you configure authentication and authorization for your app.</p>
+<h2 id='get-access-without-a-user'>Get access without a user</h2>
+<p>Some apps call the RTA API with their own identity and not on behalf of a user. In many cases, these are background services or daemons that run on a server without the presence of a signed-in user. An example of such an app might be a data extraction service that wakes up and runs overnight. In some cases, apps that have a signed-in user present may also need to call the RTA API under their own identity. For example, an app may need to use functionality that requires more elevated privileges in an organization than those carried by the signed-in user.</p>
+
+<p>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant flow to get access tokens from Auth0. In this topic, we will walk through the basic steps to configure a service and use the OAuth client credentials grant flow to get an access token.</p>
+<h3 id='authentication-and-authorization-steps'>Authentication and authorization steps</h3>
+<p>The basic steps required to configure a service and get a token from the Azure AD v2.0 endpoint that your service can use to call the RTA API under its own identity are:</p>
+
+<ol>
+<li>Register your app.</li>
+<li>Configure permissions for the RTA API on your app.</li>
+<li>Get an access token.</li>
+<li>Use the access token to call the RTA API.</li>
+</ol>
+<h3 id='get-an-access-token'>Get an access token</h3>
+<p>In the OAuth 2.0 client credentials grant flow, you use the Application ID and Application Secret values that you saved when you registered your app to request an access token directly from the Azure AD v2.0 /token endpoint.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace the values for `client_id` and `client_secret` with your personal Application ID and Application Secret values.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<blockquote>
+<p>Get access token</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">rta.auth0.com</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">cache-control</span><span class="p">:</span> <span class="s">no-cache</span>
+<span class="s">{</span>
+<span class="s">  "audience": "https://api.rtafleet.com",</span>
+<span class="s">  "grant_type": "client_credentials",</span>
+<span class="s">  "client_id": "LuULTaO2sFPbhrLFe...PrIU4Z2",</span>
+<span class="s">  "client_secret": "jsAt0vbpF3...Gqu-LYMOq0y7tYOrFyKABDovFMuZMMCfgIB"</span>
+<span class="s">}</span>
+</code></pre></div>
+<p>You send a POST request to the /token endpoint to acquire an access token.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<ul>
+<li><code>audience</code>: Must be <code>https://api.rtafleet.com</code></li>
+<li><code>client_id</code>: The Application ID that the RTA Support team assigned when you registered your app.</li>
+<li><code>client_secret</code>: The Application Secret that was generated for your app by the support team.</li>
+<li><code>grant_type</code>: Must be <code>client_credentials</code></li>
+</ul>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<blockquote>
+<p>A successful response looks like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9UWTVNVUk1TXpKQk9EWkdSVUU..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parts:view"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">2592000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>A successful response contains the following:</p>
+
+<ul>
+<li><code>access_token</code>: The requested access token. Your app can use this token in calls to the RTA API.</li>
+<li><code>scope</code>: This value contains all the application permissions you have configured for your app.</li>
+<li><code>token_type</code>: Indicates the token type value. The only type that Azure AD supports is bearer.</li>
+<li><code>expires_in</code>: How long the access token is valid (in seconds).</li>
+</ul>
+<h3 id='supported-app-scenarios-and-resources'>Supported app scenarios and resources</h3>
+<p>Apps that call the RTA API under their own identity fall into one of two categories:</p>
+
+<ul>
+<li>Background services (daemons) that run on a server without a signed-in user.</li>
+<li>Apps that have a signed-in user but also call the RTA API with their own identity; for example, to use functionality that requires more elevated privileges than those of the user.</li>
+<li>Apps that call the RTA API with their own identity use the OAuth 2.0 client credentials grant to authenticate with Azure AD and get a token.</li>
+</ul>
+<h1 id='permissions'>Permissions</h1>
+<p>Permissions in RTA are enforced based on Application identity accessing the API. A list of applications can be found in the RTA Web App when editing an API Key <a href="https://app.rtafleet.com/admin/tenants/integrations/api-keys">here</a></p>
+<h1 id='code-samples'>Code Samples</h1>
+<p>Code samples that demonstrate using the RTA API are available in the <a href="https://github.com/rtafleet/developer-samples">RTA Developer Samples GitHub repository</a>.</p>
+<h1 id='use-the-rta-api'>Use the RTA API</h1>
+<p>The RTA API is a <a href="https://graphql.org/">GraphQL</a> web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.</p>
+
+<p><code>https://api.rtafleet.com/graphql</code></p>
+
+<blockquote>
+<p>Request body format</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"operationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"variables"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"myVariable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"someValue"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The components of a request include:</p>
+
+<ul>
+<li>HTTP method - For RTA API, this will always be <code>POST</code></li>
+<li>Content type: <code>application/json</code></li>
+<li>Body: JSON-encoded body of the following form:</li>
+</ul>
+
+<p>After you make a request, a response is returned that includes:</p>
+
+<blockquote>
+<p>Response data format</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.</li>
+<li>data - The data that you requested or the result of the operation. The response message can be empty for some operations. If your request returns a lot of data, you need to page through it. For details, see <a href="#paging">Paging</a>.</li>
+<li>errors - Any errors that occur will be included.</li>
+</ul>
+
+<p>A query might result in some data and some errors, and those should be returned in a JSON object of the form:</p>
+
+<p>If there were no errors returned, the &quot;errors&quot; field should not be present on the response.</p>
+
+<blockquote>
+<p>Sample request and response to retrieve user profile and permissions</p>
+
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">query</span> <span class="nx">fetchMe</span> <span class="p">{</span>
+  <span class="nx">getMe</span> <span class="p">{</span>
+    <span class="nx">id</span>
+    <span class="nx">status</span><span class="p">{</span>
+      <span class="nx">code</span>
+      <span class="nx">state</span>
+    <span class="p">}</span>
+    <span class="nx">permissions</span> <span class="p">{</span>
+      <span class="nx">tenantId</span>
+      <span class="nx">facilityId</span>
+      <span class="nx">permission</span>
+    <span class="p">}</span>
+    <span class="nx">tenants</span> <span class="p">{</span>
+      <span class="nx">id</span>
+      <span class="nx">name</span>
+      <span class="nx">roles</span> <span class="p">{</span>
+        <span class="nx">id</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"getMe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LuULTaOBq2ar2rLFeQ8IPrIU4Z2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"tenants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTA99999"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTA Sample Customer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='exploring-the-graphql-schema'>Exploring the GraphQL Schema</h1>
+<ol>
+<li>Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases.</li>
+<li>Run the GraphQL Playground app.</li>
+<li>Select <strong>URL ENDPOINT</strong> and enter the Endpoint url for the RTA API: <code>https://api.rtafleet.com/graphql</code>.</li>
+</ol>
+<h3 id='exploring-the-docs'>Exploring the Docs</h3>
+<p>On the right side of GraphQL Playground, you will find a tab called <strong>DOCS</strong> which you an use to explore the queries and mutations available in the RTA API.</p>
+<h3 id='examples'>Examples</h3><h4 id='example-1-querying-basic-tenant-information'>Example 1: Querying basic tenant information</h4>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="nx">getTenant</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">RTACAN01</span><span class="dl">"</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">id</span>
+    <span class="nx">name</span>
+    <span class="nx">entitlements</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This sample demonstrates how to retrieve basic tenant information. Notice how GraphQL allows the developer to specify the exact data required in the response.</p>
+
+<blockquote>
+<p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"getTenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTACAN01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RTA Canary 01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entitlements"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<!--
+#### Example 2: Querying current user information, including the id, name, and RTA desktop username the account is impersonating
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+> Request
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+```javascript
+{
+  getMe {
+    id
+    email
+    firstName
+    lastName
+    tenants {
+      id
+      name
+      username
+    }
+  }
+}
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+> Response
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+```json
+{
+  "data": {
+    "getMe": {
+      "id": "0wrXTJ5KmgquF7mZA4ZF112LB1PLzOsW",
+      "email": null,
+      "firstName": null,
+      "lastName": null,
+      "tenants": [
+        {
+          "id": "RTACAN01",
+          "name": "RTA Canary 01",
+          "username": "system"
+        }
+      ]
+    }
+  }
+}
+``` -->
 <h1 id='errors'>Errors</h1><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
@@ -603,14 +753,234 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='paging'>Paging</h1>
+<p>Paging of records is handled as part of the request to any of the plural methods in the RTA API using the <code>queryOptions.pagination</code> element in the GraphQL query.</p>
+
+<p>When a response is returned, a set of <code>meta</code> data is supplied which provides additional pagination information indicating the current <code>page</code>, <code>totalPages</code>, <code>totalRecords</code>, current <code>offset</code> and current <code>limit</code></p>
+
+<p>Terms</p>
+
+<table><thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>offset</code></td>
+<td>The number of records to skip. This is a zero-based number meaning that the first record is represented by the number 0; the tenth record by the number 9.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>The maximum number of records to return in the query.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>The current page number.</td>
+</tr>
+<tr>
+<td><code>totalPages</code></td>
+<td>The total number of pages given the current <code>limit</code>.</td>
+</tr>
+<tr>
+<td><code>totalRecords</code></td>
+<td>The total number of records available.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Paged result request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">query</span> <span class="p">{</span>
+  <span class="nx">getParts</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">tenantId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">RTA99999</span><span class="dl">"</span><span class="p">,</span>
+      <span class="nx">facilityId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">200</span><span class="dl">"</span><span class="p">,</span>
+      <span class="nx">queryOptions</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nl">pagination</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">offset</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="na">limit</span><span class="p">:</span> <span class="mi">50</span>
+              <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">parts</span> <span class="p">{</span>
+      <span class="nx">id</span>
+      <span class="nx">partNumber</span>
+      <span class="nx">description</span>
+      <span class="nx">meanCost</span>
+      <span class="nx">sellingPrice</span>
+    <span class="p">}</span>
+    <span class="nx">meta</span> <span class="p">{</span>
+      <span class="nx">page</span>
+      <span class="nx">totalPages</span>
+      <span class="nx">totalRecords</span>
+      <span class="nx">offset</span>
+      <span class="nx">limit</span>
+      <span class="nx">sort</span> <span class="p">{</span>
+        <span class="nx">sortBy</span>
+        <span class="nx">sortOrder</span>
+      <span class="p">}</span>
+      <span class="nx">searchMeta</span> <span class="p">{</span>
+        <span class="nx">id</span>
+        <span class="nx">relevancy</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Response, results truncated for brevity</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"getParts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"parts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00096F4A5EB1A82C67F6BD8DFE9744BB"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"partNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10W30"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10W30 Motor Oil"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"meanCost"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.43</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sellingPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.43</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000A87043FAC8438CDF312974E95CCB2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"partNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D1770"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brake Pads - Front"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"meanCost"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.5</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sellingPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.99</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">3698</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"sortBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sortOrder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asc"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"searchMeta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='extracting-data-from-rta'>Extracting data from RTA</h1>
+<p>RTA has built a simple REST API for extracting useful data directly from the RTA database. This is useful for customers who need direct access to the raw, unformatted data for use in data warehousing and other utility projects.</p>
+
+<p>The data returned represents the actual physical column names in the database.</p>
+
+<p>The data extract API can be used by first obtaining an access token as descrbed in this documentation. The access token is then used as a bearer token in the <code>authorization</code> header.</p>
+<h3 id='required-permission'>Required Permission</h3>
+<p>A special API permission has been created to allow use of the data extract API. We recommend tighly controlling and securing the client id and client secret when granted this permission because anyone with these credentials will have full read access to all of the data in your database.</p>
+
+<table><thead>
+<tr>
+<th>Permission Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api:extractTable</td>
+<td>gives full read access to all tables in the customer database</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+<p><b>A note on etags</b></p>
+
+<p>The data extract API makes extensive use of etags. An etag is simply a text value in a table row that automatically increments whenever any column in the row is updated. The etag is similar to a date/time stamp, without the complexity of dates and times. Using the etag allows you to request only the latest changes since the last time you retrieved the data from the server so that you can periodically request small sets of data from the RTA API.</p>
+</aside>
+<h2 id='url-format-of-the-extract-api'>URL format of the extract API</h2>
+<p>Use the following URL to access the data extract API.</p>
+
+<p>URL: <code>https://api.rtafleet.com/v0/extract/&lt;tablename&gt;?etag=&lt;etag&gt;&amp;limit=&lt;limit&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>tablename</code></td>
+<td>The name of the actual table in the RTA database. To obtain the table names you may request the data dictionary by contacting support@rtafleet.com</td>
+</tr>
+<tr>
+<td><code>etag</code></td>
+<td>The first etag value to return</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>limit is not required, has a max of 1000 and defaults to 1000.  If you choose to get your data in increments of 100, you could set limit=100.</td>
+</tr>
+</tbody></table>
+<h2 id='examples-calling-the-api'>Examples calling the API</h2>
+<p>See the example at the right for the format of the data returned from the API.</p>
+
+<blockquote>
+<p>The resulting object is:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span><span class="nx">the</span> <span class="nx">rows</span> <span class="k">from</span> <span class="nx">the</span> <span class="nx">table</span> <span class="nx">sorted</span> <span class="nx">by</span> <span class="nx">etag</span><span class="p">],</span>
+     <span class="dl">"</span><span class="s2">nextEtag</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">12344</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>where <code>nextEtag</code> would be the very next etag value to use.  nextEtag is not returned if you have received all the rows in the table.</p>
+<h2 id='retreive-the-first-1000-records'>Retreive the first 1000 records</h2>
+<blockquote>
+<p>Example retrieving records from <code>vehfile</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">curl --request GET \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=0&amp;limit=1000" \
+  --header "authorization: Bearer $AUTH_TOKEN"
 </span></code></pre></div>
+<blockquote>
+<p>Sample reponse from <code>vehfile</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1000</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:[</span>
+        <span class="p">{</span><span class="nx">FIRST</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">},</span>
+        <span class="p">...,</span>
+        <span class="p">{</span><span class="mi">1000</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">nextEtag</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">12345</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>See the example CURL request at the right to retrieve the first 1000 records from the vehilces table <code>vehfile</code>.</p>
+<h2 id='retrieve-any-rows-modified-since-the-etag-12345'>Retrieve any rows modified since the etag 12345</h2>
+<blockquote>
+<p>Sample request with etag</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">curl --request GET \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=12345&amp;limit=1000" \
+  --header "authorization: Bearer $AUTH_TOKEN"
+</span></code></pre></div>
+<blockquote>
+<p>Sample response without nextEtag</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">50</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:[</span>
+        <span class="p">{</span><span class="mi">1001</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">},</span>
+        <span class="p">...,</span>
+        <span class="p">{</span><span class="mi">1051</span><span class="nx">th</span> <span class="nx">RECORD</span> <span class="nx">IN</span> <span class="nx">TABLE</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>See the example CURL request at the right to retrieve anything that has been created or modified since the etag of 12345 has been retrieved.</p>
+
+<p>Because nextEtag was not returned, there are no more rows to retrieve.</p>
+<h2 id='errors-in-the-data-extract-api'>Errors in the data extract API</h2>
+<p>If you supply an invalid tablename, you will receive a 404 error.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="http">http</a>
           </div>
       </div>
     </div>

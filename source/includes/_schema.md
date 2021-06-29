@@ -1,8 +1,7 @@
 # Exploring the GraphQL Schema
 
-1. Download and install the appropriate GraphQL Playground app for your operating system from https://github.com/prisma/graphql-playground/releases.
-2. Run the GraphQL Playground app.
-3. Select **URL ENDPOINT** and enter the Endpoint url for the RTA API: `https://api.rtafleet.com/graphql`.
+1. Visit `https://graphqlbin.com`.
+2. Select **URL ENDPOINT** and enter the Endpoint url for the RTA API: `https://api.rtafleet.com/graphql`.
 
 ### Exploring the Docs
 

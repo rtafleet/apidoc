@@ -82,7 +82,7 @@ You must replace the values for `client_id` and `client_secret` with your person
 
 ```http
 POST /oauth/token HTTP/1.1
-Host: rta.auth0.com
+Host: rtafleet.auth0.com
 Content-Type: application/json
 cache-control: no-cache
 {

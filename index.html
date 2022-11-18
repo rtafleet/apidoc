@@ -332,7 +332,10 @@
             <a href="#code-samples" class="toc-h1 toc-link" data-title="Code Samples">Code Samples</a>
           </li>
           <li>
-            <a href="#use-the-rta-api" class="toc-h1 toc-link" data-title="Use the RTA API">Use the RTA API</a>
+            <a href="#use-the-rta-api-version-2" class="toc-h1 toc-link" data-title="Use the RTA API Version 2">Use the RTA API Version 2</a>
+          </li>
+          <li>
+            <a href="#use-the-rta-api-version-1" class="toc-h1 toc-link" data-title="Use the RTA API Version 1">Use the RTA API Version 1</a>
           </li>
           <li>
             <a href="#exploring-the-graphql-schema" class="toc-h1 toc-link" data-title="Exploring the GraphQL Schema">Exploring the GraphQL Schema</a>
@@ -504,7 +507,14 @@ You must replace the values for `client_id` and `client_secret` with your person
 <p>Permissions in RTA are enforced based on Application identity accessing the API. A list of applications can be found in the RTA Web App when editing an API Key <a href="https://app.rtafleet.com/admin/tenants/integrations/api-keys">here</a></p>
 <h1 id='code-samples'>Code Samples</h1>
 <p>Code samples that demonstrate using the RTA API are available in the <a href="https://github.com/rtafleet/developer-samples">RTA Developer Samples GitHub repository</a>.</p>
-<h1 id='use-the-rta-api'>Use the RTA API</h1>
+<h1 id='use-the-rta-api-version-2'>Use the RTA API Version 2</h1>
+<p>There are 2 versions of the RTA API.  The first version is what a majority of these docs pertain to, our graphql api.</p>
+
+<p>Our version 2 api docs can be found at https://api.momentum-prd.rtafleet.com/api</p>
+
+<p>Authentication is handled the same as the version 1 api, though a token CAN be generated through the version 2 api via the following endpoint:
+https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken</p>
+<h1 id='use-the-rta-api-version-1'>Use the RTA API Version 1</h1>
 <p>The RTA API is a <a href="https://graphql.org/">GraphQL</a> web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.</p>
 
 <p><code>https://api.rtafleet.com/graphql</code></p>

@@ -2,7 +2,15 @@
 
 Code samples that demonstrate using the RTA API are available in the [RTA Developer Samples GitHub repository](https://github.com/rtafleet/developer-samples).
 
-# Use the RTA API
+# Use the RTA API Version 2
+There are 2 versions of the RTA API.  The first version is what a majority of these docs pertain to, our graphql api.
+
+Our version 2 api docs can be found at https://api.momentum-prd.rtafleet.com/api
+
+Authentication is handled the same as the version 1 api, though a token CAN be generated through the version 2 api via the following endpoint:
+https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken
+
+# Use the RTA API Version 1
 
 The RTA API is a [GraphQL](https://graphql.org/) web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.
 

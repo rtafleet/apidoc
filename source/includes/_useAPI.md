@@ -8,7 +8,7 @@ There are 2 versions of the RTA API.  The first version is what a majority of th
 Our version 2 api docs can be found [here](https://api.momentum-prd.rtafleet.com/api)
 
 Authentication is handled the same as the version 1 api, though a token CAN be generated through the version 2 api via the following endpoint:
-[api](https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken)
+[getApiToken](https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken)
 
 # Use the RTA API Version 1
 

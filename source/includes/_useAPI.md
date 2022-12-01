@@ -5,10 +5,10 @@ Code samples that demonstrate using the RTA API are available in the [RTA Develo
 # Use the RTA API Version 2
 There are 2 versions of the RTA API.  The first version is what a majority of these docs pertain to, our graphql api.
 
-Our version 2 api docs can be found at https://api.momentum-prd.rtafleet.com/api
+Our version 2 api docs can be found [here](https://api.momentum-prd.rtafleet.com/api)
 
 Authentication is handled the same as the version 1 api, though a token CAN be generated through the version 2 api via the following endpoint:
-https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken
+[api](https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken)
 
 # Use the RTA API Version 1
 

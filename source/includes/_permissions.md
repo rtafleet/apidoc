@@ -1,3 +1,3 @@
 # Permissions
 
-Permissions in RTA are enforced based on Application identity accessing the API. A list of applications can be found in the RTA Web App when editing an API Key [here](https://app.rtafleet.com/admin/tenants/integrations/api-keys)
+The RTA API exposes granular permissions over resources (for example, vehicles:view, parts:update). The permissions associated with your API key determine what your integration can access. If an operation requires a permission that your token does not grant, the API returns an HTTP 403 with an error message indicating the missing permission.

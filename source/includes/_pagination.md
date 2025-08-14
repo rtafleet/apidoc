@@ -5,7 +5,7 @@ Paging is handled using the `queryOptions.pagination` object in the request body
 > Example: Vehicles search with pagination
 
 ```http
-POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
+POST https://api.momentum-prd.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 Authorization: Bearer eyJhbGciOi...
 Content-Type: application/json
 ```

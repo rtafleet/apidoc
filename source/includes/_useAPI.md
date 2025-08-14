@@ -39,6 +39,7 @@ Base URL
 - https://api.momentum-prd.rtafleet.com
 
 Authentication
+
 - Obtain a token using the Get API Token endpoint.
 - Include the token as a Bearer token in the Authorization header on every request.
 

@@ -65,6 +65,15 @@ Content-Type: application/json
 Code samples that demonstrate using the RTA API are available in the RTA Developer Samples GitHub repository:
 https://github.com/rtafleet/developer-samples
 
+# Tenant ID (Serial Number)
+
+> Example: Finding your tenantId in the app URL
+
+```http
+https://app.rtafleet.com/.../?tenantId=RTACAN01&facilityId=2
+```
+
+The tenantId identifies your RTA tenant and is also known as your Serial Number. You can find it by signing in to the RTA web app and looking at the browser URL—it's the value of the tenantId query parameter (for example, RTACAN01 in the example above). Use this value in the API path placeholders like /{tenantId} and when calling the Get API Token endpoint.
 # Use the RTA API
 
 The RTA API is a REST web API. After you register your app and obtain an API token, you can make HTTPS requests to RTA endpoints using a Bearer token in the Authorization header.

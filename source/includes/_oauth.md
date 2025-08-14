@@ -7,23 +7,27 @@ Prerequisites
   https://app.rtafleet.com/admin/api-keys
   Additional info: https://docs.rtafleet.com/rta-manual/rta-api-keys/
 
-Get an API token
-```http
-GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-api-token?clientId={clientId}&clientSecret={clientSecret}
-```
+> Get an API token
+>
+> ```http
+> GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-api-token?clientId={clientId}&clientSecret={clientSecret}
+> ```
 
-Response
-```json
-{
-  "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIs..."
-}
-```
+> Response
+>
+> ```json
+> {
+>   "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIs..."
+> }
+> ```
 
-Use the token
+> Use the token
+>
+> ```http
+> Authorization: Bearer eyJhbGciOi...
+> ```
+>
 Include the token as a Bearer token on subsequent requests:
-```http
-Authorization: Bearer eyJhbGciOi...
-```
 
 Permissions
 The RTA API exposes granular permissions over resources (for example, vehicles:view, parts:update). The permissions associated with your API key determine what your integration can access. If an operation requires a permission that your token does not grant, the API returns an HTTP 403 with an error message indicating the missing permission.

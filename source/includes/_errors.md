@@ -11,7 +11,7 @@ Common status codes
 - 429 Too Many Requests: Throttling/rate limiting.
 - 500 Internal Server Error: An unexpected error occurred.
 
-Sample error response (permission)
+> Sample error response (permission)
 ```json
 {
   "statusCode": 403,
@@ -21,7 +21,7 @@ Sample error response (permission)
 }
 ```
 
-Sample error response (validation)
+> Sample error response (validation)
 ```json
 {
   "statusCode": 400,

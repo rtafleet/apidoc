@@ -103,16 +103,19 @@ Endpoint
 - POST /asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 
 Request body (queryOptions)
+
 - pagination: Controls paging through results
   - offset: Number of records to skip (zero-based; first record is 0)
   - limit: Maximum number of records to return
 - filters: Array of filter objects to narrow results
   - name: The field name to filter on (for example, vehicleNumber, year, facility.number)
   - operator: How to compare the field to the provided values. Supported operators include:
-    - eq, neq
-    - gt, gte, lt, lte
-    - contains, beginsWith, endsWith
+      - eq, neq
+      - gt, gte, lt, lte
+      - contains, beginsWith, endsWith
   - values: Array of one or more values to evaluate against the field (strings, numbers, booleans, or null)
 - sorts: Array of sort objects to order results
   - sortBy: The field name to sort on (for example, vehicleNumber, year)
   - sortOrder: ASC or DESC
+
+The sort and filter fields are defined in the API Documentation for each endpoint.

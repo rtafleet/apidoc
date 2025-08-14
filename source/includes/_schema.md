@@ -2,7 +2,9 @@
 
 The RTA API is REST-based and uses standard HTTP methods and JSON payloads. You can explore available endpoints and models via the OpenAPI documentation:
 
-- https://api.momentum-prd.rtafleet.com/api
+- [Swagger Docs](https://api.momentum-prd.rtafleet.com/api)
+
+As a note, the swagger docs do not currently support testing endpoints.  You will need to test using postman or some other tool.
 
 Key points
 

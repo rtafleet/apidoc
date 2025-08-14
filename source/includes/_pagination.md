@@ -2,17 +2,6 @@
 
 Paging is handled using the `queryOptions.pagination` object in the request body for collection endpoints. Responses include a `meta` object with pagination details.
 
-Terms
-
-Term | Meaning
----- | -------
-`offset` | Number of records to skip (zero-based; first record is 0).
-`limit` | Maximum number of records to return.
-`page` | The current page number derived from offset/limit.
-`totalPages` | Total number of pages given the current `limit`.
-`totalRecords` | Total number of records available.
-
-Example: Vehicles search with pagination
 ```http
 POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 Authorization: Bearer eyJhbGciOi...
@@ -43,3 +32,13 @@ Content-Type: application/json
   }
 }
 ```
+
+Terms
+
+Term | Meaning
+---- | -------
+`offset` | Number of records to skip (zero-based; first record is 0).
+`limit` | Maximum number of records to return.
+`page` | The current page number derived from offset/limit.
+`totalPages` | Total number of pages given the current `limit`.
+`totalRecords` | Total number of records available.

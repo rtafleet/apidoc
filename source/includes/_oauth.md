@@ -11,6 +11,7 @@ GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-
   "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIs..."
 }
 ```
+
 ```http
 Authorization: Bearer eyJhbGciOi...
 ```

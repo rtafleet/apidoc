@@ -25,7 +25,7 @@ api:extractTable | gives full read access to all tables in the customer database
 
 Use the following URL to access the data extract API.
 
-URL: `https://api.momentum-prd.rtafleet.com/v0/extract/<tablename>?etag=<etag>&limit=<limit>`
+URL: `https://api.rtafleet.com/v0/extract/<tablename>?etag=<etag>&limit=<limit>`
 
 Field | Description
 ----- | -----------
@@ -55,7 +55,7 @@ where `nextEtag` would be the very next etag value to use.  nextEtag is not retu
 
 ```http
 curl --request GET \
-  --url "https://api.momentum-prd.rtafleet.com/v0/extract/vehfile?etag=0&limit=1000" \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=0&limit=1000" \
   --header "authorization: Bearer $AUTH_TOKEN"
 ```
 
@@ -81,7 +81,7 @@ See the example CURL request at the right to retrieve the first 1000 records fro
 
 ```http
 curl --request GET \
-  --url "https://api.momentum-prd.rtafleet.com/v0/extract/vehfile?etag=12345&limit=1000" \
+  --url "https://api.rtafleet.com/v0/extract/vehfile?etag=12345&limit=1000" \
   --header "authorization: Bearer $AUTH_TOKEN"
 ```
 

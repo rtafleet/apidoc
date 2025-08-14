@@ -12,20 +12,22 @@ Common status codes
 - 500 Internal Server Error: An unexpected error occurred.
 
 > Sample error response (permission)
-> ```json
-> {
->   "statusCode": 403,
->   "error": "Forbidden",
->   "message": "Missing required permission vehicles:view",
->   "requiredPermission": "vehicles:view"
-> }
-> ```
->
+
+```json
+{
+  "statusCode": 403,
+  "error": "Forbidden",
+  "message": "Missing required permission vehicles:view",
+  "requiredPermission": "vehicles:view"
+}
+```
+
 > Sample error response (validation)
-> ```json
-> {
->   "statusCode": 400,
->   "error": "Bad Request",
->   "message": "Invalid filter field: vehicleNumbr"
-> }
-> ```
+
+```json
+{
+  "statusCode": 400,
+  "error": "Bad Request",
+  "message": "Invalid filter field: vehicleNumbr"
+}
+```

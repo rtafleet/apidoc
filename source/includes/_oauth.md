@@ -30,5 +30,8 @@ GET https://api.momentum-prd.rtafleet.com/information-management/{tenantId}/inte
 Authorization: Bearer eyJhbGciOi...
 ```
 To call the RTA API, your app must obtain an API token from the Momentum Get API Token endpoint. Tokens are JSON Web Tokens (JWT) used as a Bearer token in the Authorization header.  This will require a Client ID and Secret, which you can obtain by registering your app in Fleet360.
+<aside class="notice">
+You must replace the values for `client_id` and `client_secret` with your personal Client ID and Client Secret values.
+</aside>
 
 Your app must be registered with RTA. Registering your app establishes a unique application ID and other values that your app uses to authenticate with Auth0 and get tokens. You register your app by [creating an API Key on Fleet360](https://app.rtafleet.com/admin/api-keys). More info can also be found [here](https://docs.rtafleet.com/rta-manual/rta-api-keys/). 

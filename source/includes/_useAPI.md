@@ -45,6 +45,67 @@ Authentication
 
 A successful response includes the requested data and pagination metadata. See Paging for details on pagination fields.
 
+# Working with IDs
+> Example: Find a vehicle ID, then get details
+
+```http
+POST https://api.momentum-prd.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
+Authorization: Bearer eyJhbGciOi...
+Content-Type: application/json
+```
+
+```json
+{
+  "queryOptions": {
+    "pagination": { "offset": 0, "limit": 1 },
+    "filters": [
+      { "name": "vehicleNumber", "operator": "eq", "values": ["1001"] }
+    ]
+  }
+}
+```
+
+> Sample search response (truncated)
+
+```json
+{
+  "items": [
+    {
+      "id": "UUID",
+      "vehicleNumber": "1001"
+    }
+  ],
+  "meta": { /* ... */ }
+}
+```
+
+> Use the ID with detail/update endpoints
+
+```http
+# Get details
+GET https://api.momentum-prd.rtafleet.com/asset-management/{tenantId}/vehicles/{id}
+Authorization: Bearer eyJhbGciOi...
+
+# Update (example)
+PUT https://api.momentum-prd.rtafleet.com/asset-management/{tenantId}/vehicles/{id}
+Authorization: Bearer eyJhbGciOi...
+Content-Type: application/json
+
+{ "make": "Ford" }
+```
+
+Many endpoints that act on a specific resource (for example: get details, update, delete) require that resource’s unique identifier (id). You typically obtain these IDs from the corresponding search endpoints. Each search response includes an `items` array where each item contains an `id` field.
+
+Typical flow
+- Use a search endpoint to find the record and read its `id` from the response
+- Call the detail/update/delete endpoint using that `id`
+
+
+
+Notes
+- IDs are stable unique identifiers (generally UUIDs) and are required for actions on a single resource across domains (Vehicles, Work Orders, Parts, etc.).
+- For nested resources (e.g., work order lines, attachments, comments), you may need both the parent ID and the child item ID; obtain each via their respective search/list endpoints.
+
 # Searching (Vehicles example)
 > Example request
 

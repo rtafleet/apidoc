@@ -1,101 +1,102 @@
+# Searching (Vehicles example)
+
+Use the Vehicles search-vehicles-enhanced endpoint to perform flexible searches with filters, sorts, and pagination.
+
+Endpoint
+- POST /asset-management/{tenantId}/vehicles/search-vehicles-enhanced
+
+Request body
+- queryOptions.pagination: { offset, limit }
+- queryOptions.filters: array of { field, value } to filter results
+- queryOptions.sorts: array of { field, order } to sort results
+
+Example
+```http
+POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
+Authorization: Bearer eyJhbGciOi...
+Content-Type: application/json
+
+{
+  "queryOptions": {
+    "pagination": { "offset": 0, "limit": 25 },
+    "filters": [
+      { "field": "vehicleNumber", "value": "1001" },
+      { "field": "year", "value": 2022 }
+    ],
+    "sorts": [
+      { "field": "vehicleNumber", "order": "asc" }
+    ]
+  }
+}
+```
+
+Response
+```json
+{
+  "items": [
+    {
+      "id": "UUID",
+      "vehicleNumber": "1001",
+      "vin": "1FT...123",
+      "make": "Ford",
+      "model": "F-150",
+      "year": 2022
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "totalPages": 1,
+    "totalRecords": 1,
+    "offset": 0,
+    "limit": 25,
+    "sort": { "sortBy": "vehicleNumber", "sortOrder": "asc" },
+    "searchMeta": null
+  }
+}
+```
 # Code Samples
 
-Code samples that demonstrate using the RTA API are available in the [RTA Developer Samples GitHub repository](https://github.com/rtafleet/developer-samples).
+Code samples that demonstrate using the RTA API are available in the RTA Developer Samples GitHub repository:
+https://github.com/rtafleet/developer-samples
 
-# Use the RTA API Version 2
-There are 2 versions of the RTA API.  The first version is what a majority of these docs pertain to, our graphql api.
+# Use the RTA API
 
-Our version 2 api docs can be found [here](https://api.momentum-prd.rtafleet.com/api)
+The RTA API is a REST web API. After you register your app and obtain an API token, you can make HTTPS requests to RTA endpoints using a Bearer token in the Authorization header.
 
-Authentication is handled the same as the version 1 api, though a token CAN be generated through the version 2 api via the following endpoint:
-[getApiToken](https://api.momentum-prd.rtafleet.com/api/#/Information%20Management%20%3E%20Integrations/getApiToken)
+Base URL
+- https://api.rtafleet.com
 
-# Use the RTA API Version 1
+Authentication
+- Obtain a token using the Get API Token endpoint.
+- Include the token as a Bearer token in the Authorization header on every request.
 
-The RTA API is a [GraphQL](https://graphql.org/) web API that enables you to access RTA API service resources. After you register your app and get authentication tokens for a user or service, you can make requests to the RTA API.
+Example
+```http
+GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-api-token?clientId={clientId}&clientSecret={clientSecret}
 
-`https://api.rtafleet.com/graphql`
-
-> Request body format
-
-```json
+Response:
 {
-  "query": "...",
-  "operationName": "...",
-  "variables": { "myVariable": "someValue", ... }
+  "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6..."
 }
 ```
 
-The components of a request include:
+Then call API endpoints with the token:
+```http
+POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
+Authorization: Bearer eyJhbGciOi...
+Content-Type: application/json
 
-- HTTP method - For RTA API, this will always be `POST`
-- Content type: `application/json`
-- Body: JSON-encoded body of the following form:
-
-After you make a request, a response is returned that includes:
-
-> Response data format
-
-```json
 {
-  "data": { ... },
-  "errors": [ ... ]
-}
-```
-
-- Status code - An HTTP status code that indicates success or failure. For details about HTTP error codes, see Errors.
-- data - The data that you requested or the result of the operation. The response message can be empty for some operations. If your request returns a lot of data, you need to page through it. For details, see [Paging](#paging).
-- errors - Any errors that occur will be included.
-
-A query might result in some data and some errors, and those should be returned in a JSON object of the form:
-
-If there were no errors returned, the "errors" field should not be present on the response.
-
-> Sample request and response to retrieve user profile and permissions
-
-> Request
-
-```javascript
-query fetchMe {
-  getMe {
-    id
-    status{
-      code
-      state
-    }
-    permissions {
-      tenantId
-      facilityId
-      permission
-    }
-    tenants {
-      id
-      name
-      roles {
-        id
-      }
-    }
+  "queryOptions": {
+    "pagination": { "offset": 0, "limit": 50 },
+    "filters": [
+      { "field": "vehicleNumber", "value": "1001" }
+    ],
+    "sorts": [
+      { "field": "vehicleNumber", "order": "asc" }
+    ]
   }
 }
 ```
 
-> Response
-
-```json
-{
-  "data": {
-    "getMe": {
-      "id": "LuULTaOBq2ar2rLFeQ8IPrIU4Z2",
-      "status": null,
-      "permissions": [],
-      "tenants": [
-        {
-          "id": "RTA99999",
-          "name": "RTA Sample Customer",
-          "roles": []
-        }
-      ]
-    }
-  }
-}
-```
+A successful response includes the requested data and pagination metadata. See Paging for details on pagination fields.

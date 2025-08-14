@@ -13,7 +13,6 @@ Term | Meaning
 `totalRecords` | Total number of records available.
 
 Example: Vehicles search with pagination
-> Request
 ```http
 POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 Authorization: Bearer eyJhbGciOi...
@@ -28,7 +27,6 @@ Content-Type: application/json
 }
 ```
 
-> Response (truncated)
 ```json
 {
   "items": [

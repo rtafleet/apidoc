@@ -10,7 +10,6 @@ Request body
 - queryOptions.filters: array of { name, operator, values[] } to filter results
 - queryOptions.sorts: array of { sortBy, sortOrder } to sort results
 
-> Example request
 ```http
 POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 Authorization: Bearer eyJhbGciOi...
@@ -32,7 +31,6 @@ Content-Type: application/json
 }
 ```
 
-> Response
 ```json
 {
   "items": [
@@ -72,7 +70,6 @@ Authentication
 - Obtain a token using the Get API Token endpoint.
 - Include the token as a Bearer token in the Authorization header on every request.
 
-> Example: Get an API token
 ```http
 GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-api-token?clientId={clientId}&clientSecret={clientSecret}
 ```
@@ -83,7 +80,6 @@ GET https://api.rtafleet.com/information-management/{tenantId}/integrations/get-
 }
 ```
 
-> Call an endpoint with the token
 ```http
 POST https://api.rtafleet.com/asset-management/{tenantId}/vehicles/search-vehicles-enhanced
 Authorization: Bearer eyJhbGciOi...

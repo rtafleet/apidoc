@@ -1,6 +1,6 @@
 # Authentication: Get API Token
 
-To call the RTA API, your app must obtain an API token from the Momentum Get API Token endpoint. Tokens are JSON Web Tokens (JWT) used as a Bearer token in the Authorization header.
+To call the RTA API, your app must obtain an API token from the Momentum Get API Token endpoint. Tokens are JSON Web Tokens (JWT) used as a Bearer token in the Authorization header. See Tenant ID (Serial Number) to locate your {tenantId}.
 
 > Example: Get an API token
 

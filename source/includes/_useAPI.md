@@ -7,8 +7,8 @@ Endpoint
 
 Request body
 - queryOptions.pagination: { offset, limit }
-- queryOptions.filters: array of { field, value } to filter results
-- queryOptions.sorts: array of { field, order } to sort results
+- queryOptions.filters: array of { name, operator, values[] } to filter results
+- queryOptions.sorts: array of { sortBy, sortOrder } to sort results
 
 Example
 ```http
@@ -20,11 +20,11 @@ Content-Type: application/json
   "queryOptions": {
     "pagination": { "offset": 0, "limit": 25 },
     "filters": [
-      { "field": "vehicleNumber", "value": "1001" },
-      { "field": "year", "value": 2022 }
+      { "name": "vehicleNumber", "operator": "eq", "values": ["1001"] },
+      { "name": "year", "operator": "gte", "values": [2020] }
     ],
     "sorts": [
-      { "field": "vehicleNumber", "order": "asc" }
+      { "sortBy": "vehicleNumber", "sortOrder": "ASC" }
     ]
   }
 }
@@ -90,10 +90,10 @@ Content-Type: application/json
   "queryOptions": {
     "pagination": { "offset": 0, "limit": 50 },
     "filters": [
-      { "field": "vehicleNumber", "value": "1001" }
+      { "name": "vehicleNumber", "operator": "eq", "values": ["1001"] }
     ],
     "sorts": [
-      { "field": "vehicleNumber", "order": "asc" }
+      { "sortBy": "vehicleNumber", "sortOrder": "ASC" }
     ]
   }
 }
